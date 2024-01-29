@@ -30,6 +30,10 @@ function NewPassForm() {
     if (newPassword === confirmPassword && newPassword.trim() !== '') {
       console.log('Password match! Submitting...');
       // Add your logic for form submission.
+
+      // Show an alert when the password is confirmed
+      window.alert('Password confirmed! Form submitted successfully.');
+
     } else {
       console.error('Passwords do not match or are empty. Please check.');
     }
@@ -50,8 +54,8 @@ function NewPassForm() {
         <label htmlFor="newPassword">
           <i className="fas fa-envelope"></i>
         </label>
-        <div className="email-input-field">
-          <input 
+        <div className="email-input-field" style={{ marginBottom: '20px' }}>
+          <input
             type={showPassword ? 'text' : 'password'}
             placeholder="Enter New Password here*"
             id="newPassword"
@@ -68,8 +72,9 @@ function NewPassForm() {
             {showPassword ? 'Hide' : 'Show'}
           </button>
         </div>
-        <div className="email-input-field">
-        <input style={{ marginTop: '30px' }}
+        <div className="email-input-field" style={{ marginBottom: '20px' }}>
+          <input
+            style={{ marginTop: '30px' }}
             type={showPassword ? 'text' : 'password'}
             placeholder="Confirm New Password*"
             id="confirmPassword"
@@ -82,16 +87,18 @@ function NewPassForm() {
         </div>
 
         {newPassword === confirmPassword && newPassword.trim() !== '' && (
-          <span style={{ color: 'green', fontSize: '14px', marginTop: '15px', display: 'block' }}>Passwords match</span>
+          <span style={{ color: 'green', fontSize: '14px', marginTop: '35px', display: 'flex' }}>Passwords match</span>
         )}
 
         {newPassword !== confirmPassword && confirmPassword.trim() !== '' && newPassword.trim() !== '' && (
-          <span style={{ color: 'red', fontSize: '14px', marginTop: '15px', display: 'block' }}>{confirmPasswordError || 'Passwords do not match'}</span>
+          <span style={{ color: 'red', fontSize: '14px', marginTop: '35px', display: 'block' }}>{confirmPasswordError || 'Passwords do not match'}</span>
         )}
 
-        <Link to="/dashboard">
-          <button type="submit" className="Confirm-button" style={{ backgroundColor: '#126912' }}>Confirm</button>
-        </Link>
+        <div style={{ marginTop: '0px' }}>
+          <Link to="/dashboard">
+            <button type="submit" className="Confirm-button" style={{ backgroundColor: '#126912' }}>Confirm</button>
+          </Link>
+        </div>
       </form>
 
       <div className="email-panels-container">
