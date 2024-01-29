@@ -9,6 +9,7 @@ body {
   padding: 0;
   background-color:#EBFFE5 ;
   font-family: sans-serif;
+  
 }
 
 /* src/App.css */
@@ -33,6 +34,7 @@ body {
   background-color: #126912;
   border: 1px solid #126912;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);
+  
 }
 
 
@@ -1449,7 +1451,7 @@ justify-content: center;
 
 .my-navigation {
   background-color: #BCE8B1;
-  padding: 1em 2em;
+  padding:0.5em 0.5em;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1483,7 +1485,7 @@ justify-content: center;
 #register, #login {
   background-color: #126912;
   color: #fff;
-  padding: 10px 10px;
+  padding: 5px 10px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -1666,7 +1668,7 @@ justify-content: center;
   background-color: #126912;
   border: 1px solid #126912;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);
-  margin-top: 5px;
+  margin-top: 20px;
 }
 
 .Show-button {
@@ -1703,4 +1705,49 @@ justify-content: center;
 
 .Confirm-button:hover, .Show-button:hover, .nav-HOME-button:hover, .nav-LOGOUT-button:hover {
 color: gray;
+}
+
+
+
+.TeamA-courses {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px; /* Adjust the margin as needed */
+}
+
+
+
+.TeamA-courses {
+  display: flex;
+  justify-content: space-around; /* Center the squares */
+  margin-top: 20px;
+  overflow: hidden; /* Prevent any content overflow */
+}
+
+.TeamA-square {
+  width: 300px;
+  height: 400px;
+  background-color: #BCE8B1;
+  margin-right: 40px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the content inside the square */
+}
+
+.TeamA-square svg {
+  width: 120px;
+  height: 120px;
+  color: #050404;
+  margin-top: 50px;
+}
+
+.TeamA-square h3,
+.TeamA-square h4,
+.TeamA-square h5,
+.TeamA-square h6 {
+  margin-top: 20px; /* Adjust as needed */
+  font-weight: bold;
+  font-size: x-large;
 }

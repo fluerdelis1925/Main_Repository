@@ -9,8 +9,9 @@ function Email() {
   return (
     <div className="email-container">
       <div className="auth-header">
+        
         <img
-          src="../../assets/TeamAassets/companyLogo.png"
+          src="..\src\assets\TeamAassets\companyLogo.png" 
           alt="Logo"
           className="logo"
         />

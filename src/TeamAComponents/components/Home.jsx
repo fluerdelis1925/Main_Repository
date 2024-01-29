@@ -22,7 +22,7 @@ const Home = () => {
             <h3>Programming</h3>
           </div>
           <div className="square">
-            <h3>Artificial Intelligence</h3>
+            <h3>Bayani Intelligence</h3>
           </div>
           <div className="square">
             <h3>Business</h3>

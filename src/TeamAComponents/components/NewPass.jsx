@@ -7,16 +7,17 @@ import "../styles/Auth.css";
 function TeamA_NewPass({ onNewPassForm }) {
   return (
     <div className="email-container">
-      <div className="auth-header">
+     <div className="auth-header">
+        
         <img
-          src="../../assets/TeamAassets/companyLogo.png"
+          src="..\src\assets\TeamAassets\companyLogo.png" 
           alt="Logo"
           className="logo"
         />
       </div>
       <div className="email-navi">
         <div className="home-button">
-          <Link to="/verify">
+          <Link to="/">
             <button>Home</button>
           </Link>
         </div>

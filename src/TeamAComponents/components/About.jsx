@@ -51,9 +51,6 @@ const About = () => {
             <Link to='/'>
               <button className="nav-HOME-button">Home</button>
             </Link>
-            <Link to='/'>
-              <button className="nav-LOGOUT-button">Logout</button>
-            </Link>
             {/* Add more navigation links as needed */}
           </ul>
         </nav>

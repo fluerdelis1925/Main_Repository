@@ -3,29 +3,28 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from "./AuthContext";  
 
-
 function TeamA_LoginForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
 
-
   // Use the useAuth hook to get the handleLogin and setLoggedIn functions
   const { handleLogin } = useAuth();
   const navigate = useNavigate();
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-
     try {
       // Hardcoded logic to check email and password
-      if (email === 'student@gmail.com' && password === 'admin123') {
-        navigate('/TeamCdashboard'); // Redirect to TeamBdashboard
-      } else if (email === 'faculty@gmail.com' && password === 'admin123') {
-        navigate('/TeamBdashboard'); // Redirect to TeamCdashboard
+      if (
+        (email === 'student@gmail.com' && password === 'admin123') ||
+        (email === 'faculty@gmail.com' && password === 'admin123')
+      ) {
+        // If the credentials are valid, redirect to the respective dashboards
+        navigate(email === 'student@gmail.com' ? '/TeamCdashboard' : '/TeamBdashboard');
       } else {
+        alert("invalid username and password")
         // If email or password is incorrect, perform normal login
         await handleLogin({ email, password }, navigate);
       }
@@ -34,7 +33,6 @@ function TeamA_LoginForm() {
       console.error('Login failed:', error);
     }
   };
-
 
   return (
     <form onSubmit={handleSubmit} className="template-form">
@@ -67,12 +65,10 @@ function TeamA_LoginForm() {
           Forgot your password?
         </div>
       </Link>
-     
-<button type="submit" className="TeamA-button" style={{ backgroundColor: '#126912' }}>Sign in</button>
-{error && <div className="error-message">{error}</div>}
+      <button type="submit" className="TeamA-button" style={{ backgroundColor: '#126912' }}>Sign in</button>
+      {error && <div className="error-message">{error}</div>}
     </form>
   );
 }
-
 
 export default TeamA_LoginForm;
