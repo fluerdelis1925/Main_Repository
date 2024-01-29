@@ -51,7 +51,7 @@ function NewPassForm() {
           <i className="fas fa-envelope"></i>
         </label>
         <div className="email-input-field">
-          <input
+          <input 
             type={showPassword ? 'text' : 'password'}
             placeholder="Enter New Password here*"
             id="newPassword"
@@ -69,7 +69,7 @@ function NewPassForm() {
           </button>
         </div>
         <div className="email-input-field">
-          <input
+        <input style={{ marginTop: '30px' }}
             type={showPassword ? 'text' : 'password'}
             placeholder="Confirm New Password*"
             id="confirmPassword"

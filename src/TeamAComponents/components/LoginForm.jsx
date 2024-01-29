@@ -24,7 +24,7 @@ function TeamA_LoginForm() {
         // If the credentials are valid, redirect to the respective dashboards
         navigate(email === 'student@gmail.com' ? '/TeamCdashboard' : '/TeamBdashboard');
       } else {
-        alert("invalid username and password")
+        alert("Invalid Username or Password")
         // If email or password is incorrect, perform normal login
         await handleLogin({ email, password }, navigate);
       }
@@ -36,8 +36,8 @@ function TeamA_LoginForm() {
 
   return (
     <form onSubmit={handleSubmit} className="template-form">
-      <h2>Sign in to your account.</h2>
-      <h2>Be part of the success.</h2>
+      <h2>Sign In to  Your Account
+      and Be Part of the Success</h2>
       <input
         type="email"
         id="email"
@@ -58,8 +58,7 @@ function TeamA_LoginForm() {
         {/* Your remember me checkbox */}
       </div>
       <div>
-        <h3>By clicking "Sign in," you agree to our Terms of Use and our Privacy Policy.</h3>
-      </div>
+      <h3 style={{ marginTop: '15px' }}>By clicking "Sign in," you agree to our Terms of Use and our Privacy Policy.</h3>      </div>
       <Link to="/forgot">
         <div className="forgot-password">
           Forgot your password?
