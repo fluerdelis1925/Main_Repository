@@ -3,42 +3,22 @@ import { Link } from "react-router-dom";
 import "../styles/Auth.css";
 import Navigation from './Navigation';
 import { useAuth } from "./AuthContext"; 
+import Footer from "../../TeamBComponents/components/Footer";
 
 const Dashboard = () => {
   const { isLoggedIn, handleLogout } = useAuth();
 
   return (
     <div>
-      <nav className="my-navigation">
-        <img src="..\src\assets\TeamAassets\companyLogo.png" alt="Logo" />
-        <ul className="menu-hide">
-        <li>
-            <a href="/verif_nonuser">Verification</a>
-          </li>
-          <li>
-            <a href="About">About us</a>
-          </li>
-          <li>
-          <a href="https://www.tsukiden.com.ph">Contact us</a>
-          </li>
-        </ul>
-        <div className="testing">
-          <Link to="/register">
-            <button id="register">Register</button>
-          </Link>
-          <Link to="/login">
-            <button id="login">Log In</button>
-          </Link>
-        </div>
-      </nav>
-
-      <div className="home-content">
+    
+      
         <div className="japanese-message">
           <h1>知識を得る。自分のやり方で学ぼう。ベストを尽くす。</h1>
         </div>
         <div className="english-message">
           <h1>Gain knowledge. Learn your way. Be the best.</h1>
         </div>
+        <div className="home-content">
         <div className="TeamA-courses">
           <div className="TeamA-square h1">
             <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="currentColor" className="bi bi-file-earmark-code-fill" viewBox="0 0 16 16">
@@ -68,13 +48,9 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-      <div>
-      <footer className="flex justify-center p-9 fixed bottom-0 w-full ">
-        <div>
-          <p className="text-[#4D9349] font-medium">All Rights Reserved | Copyright 2024</p>
-        </div>
-      </footer>
-    </div>
+      <div className="mt-20">
+        <Footer/>
+      </div>
     </div>
     
     

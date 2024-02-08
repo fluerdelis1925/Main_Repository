@@ -25,6 +25,12 @@
   background-color: gray;
 } 
 
+.TeamA_LoginHeader
+{
+  display: flex;
+  justify-content: center;
+}
+
 .login-button
 {
   cursor: pointer;
@@ -98,7 +104,7 @@
 }
 
 
-.japanese-message h1 {
+.japanese-message  {
   color: #F6F6F6;
   font-family: Inter;
   font-size: 35px;
@@ -107,6 +113,7 @@
   line-height: normal;
   margin: 55px;
   margin-top:20px;
+  text-align: center;
 }
 
 .japanese-message {
@@ -117,7 +124,7 @@
     2px 2px 2px #009545;
 }
 
-.english-message h1 {
+.english-message {
   color: #587354;
   font-family: Inter;
   font-size: 35px;
@@ -125,6 +132,8 @@
   font-weight: 700;
   margin-top:-65px;
   margin-bottom: 10px;
+  text-align: center;
+  padding-top: 1rem;
 }
 
 .english-message {
@@ -1289,12 +1298,7 @@ input::placeholder{
   left: 10px;
 }
 /* Responsive styles */
-@media only screen and (max-width: 600px) {
-  .wBackbutton {
-    width: auto; /* Reset width to auto for smaller screens */
-    margin-bottom: 10px; /* Adjust spacing for smaller screens */
-  }
-}
+
 .center-text {
   text-align: center;
 }
@@ -1660,7 +1664,94 @@ input[type="text"] {
   align-items: center;
   padding: 20px;
   background-color: #f0f0f0;
+
 }
 
 
 
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+  .japanese-message 
+  { 
+   
+    font-size: 1.2rem;
+    text-align: center;
+  
+  }
+
+  .english-message 
+  {
+    
+    font-size: 1.2rem;
+    padding: 0;
+    text-align: center;
+    margin: 0 10px 0 10px;
+    padding-bottom: 2rem;
+
+  }
+   .TeamA-courses
+   {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    row-gap: 2rem;
+    margin: auto;
+    position: relative;
+
+   }
+ 
+   .TeamA-courses .TeamA-square
+   {
+     margin: 0%;
+   }
+    
+   .TeamA_LoginHeader
+   {
+  
+    display: flex;
+    justify-content: center;    
+
+   }
+
+
+   .TeamA_LoginBody
+   {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+   }
+
+   .auth-label
+   {
+     display: none;
+   }
+
+
+  
+  
+ 
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+ @media only screen and (min-width: 600px) 
+ {
+  .japanese-message 
+  { 
+   
+    font-size: 3rem;
+    text-align: center;
+  
+  }
+   
+ }  
+
+/* Medium devices (landscape tablets, 768px and up) */
+ @media only screen and (min-width: 768px) {} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+/* @media only screen and (min-width: 992px) {...} */
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* @media only screen and (min-width: 1200px) {...} */

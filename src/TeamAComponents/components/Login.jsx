@@ -28,8 +28,8 @@ function Login({ onNavigateHome, onForgotPassword }) {
           </Link>
         </div>
       </div>
-      <div style={{display: "flex", justifyContent: "center"}}>
-      <div style={{display: "flex", flexDirection: "column", alignItems: "start", }}>
+    <div className='TeamA_LoginHeader'>
+      <div className='TeamA_LoginBody'>
       <div>
         <div className="auth-label">
           <h1>LOG IN</h1>
