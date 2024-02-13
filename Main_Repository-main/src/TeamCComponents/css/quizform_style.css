@@ -1,0 +1,36 @@
+.quizItemList ul {
+    margin-top: 1rem;
+}
+
+.quizItemList ul li {
+    display: flex;
+    align-items: center;
+    height: 2.5rem;
+    padding-left: 1rem;
+    border: 0.01rem solid #0e3b0e;
+    border-radius: 0.3rem;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#finalAnswersContainer ul li {
+    height: fit-content;
+}
+
+.quizItemList button {
+    margin: auto;
+    width: 2rem;
+    height: 3rem;
+    background: #0e3b03;
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.quizItemList li.selected {
+    background-color: #0e3b03;
+    color: #fff;
+}
