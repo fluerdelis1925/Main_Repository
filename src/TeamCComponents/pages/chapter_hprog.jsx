@@ -46,7 +46,7 @@ function TeamC_ChapterHprog() {
             }}>
               <span>-$-</span>
             </div>
-          </div>
+          </div>]
 
         </div>
 

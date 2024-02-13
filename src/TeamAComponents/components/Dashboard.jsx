@@ -3,35 +3,15 @@ import { Link } from "react-router-dom";
 import "../styles/Auth.css";
 import Navigation from './Navigation';
 import { useAuth } from "./AuthContext"; 
+import Main_Nav from "./Main_Nav";
+import Footer from "./Footer";
 
 const Dashboard = () => {
   const { isLoggedIn, handleLogout } = useAuth();
 
   return (
     <div>
-      <nav className="my-navigation">
-        <img src="..\src\assets\TeamAassets\companyLogo.png" alt="Logo" />
-        <ul className="menu-hide">
-        <li>
-            <a href="/verif_nonuser">Verification</a>
-          </li>
-          <li>
-            <a href="About">About us</a>
-          </li>
-          <li>
-          <a href="https://www.tsukiden.com.ph">Contact us</a>
-          </li>
-        </ul>
-        <div className="testing">
-          <Link to="/register">
-            <button id="register">Register</button>
-          </Link>
-          <Link to="/login">
-            <button id="login">Log In</button>
-          </Link>
-        </div>
-      </nav>
-
+      <Main_Nav/>
       <div className="home-content">
         <div className="japanese-message">
           <h1>知識を得る。自分のやり方で学ぼう。ベストを尽くす。</h1>
@@ -69,11 +49,11 @@ const Dashboard = () => {
         </div>
       </div>
       <div>
-      <footer className="flex justify-center pt-[2rem]  fixed bottom-0 w-full ">
+     
         <div>
-          <p className="text-[#4D9349] font-medium pb-3">All Rights Reserved | Copyright 2024</p>
+          <Footer/>
         </div>
-      </footer>
+    
     </div>
     </div>
     
