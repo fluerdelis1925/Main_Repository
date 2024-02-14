@@ -26,12 +26,12 @@ function Main_Nav() {
 
   return (
     <div>
-      <nav ref={navRef} className='flex justify-between p-2 bg-[#D9FFCF] fixed w-full items-center  border-b top-0   z-10 text-[1.1rem]'>
+      <nav ref={navRef} className='flex  justify-between p-2 bg-[#D9FFCF] fixed w-full items-center  border-b top-0   z-10 text-[1.1rem]'>
         <Link>
           <img className="w-[10rem] h-auto object-cover" src="..\src\assets\TeamAassets\companyLogo.png" alt="Logo" />
         </Link>
 
-        <ul className='hidden md:flex gap-5'>
+        <ul className='hidden md:flex gap-4'>
           <Link to=''><li>About Us</li></Link>
           <Link to=''><li>Contact Us</li></Link>
           <Link to=''><li>Verification</li></Link>
