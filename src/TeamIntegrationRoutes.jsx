@@ -85,7 +85,6 @@ function TeamIntegrationRoutes() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/forgot" element={<Forgot />} />
           <Route path="/verify" element={<Verification />} />
           <Route path="/profile" element={<Profile />} />

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "../styles/Auth.css";
 import Navigation from './Navigation';
 import { useAuth } from "./AuthContext"; 
-import Main_Nav from "./Main_Nav";
 import Footer from "./Footer";
 
 const Dashboard = () => {
@@ -11,7 +10,8 @@ const Dashboard = () => {
 
   return (
     <div>
-      <Main_Nav/>
+    
+    <Navigation/>
       <div className="home-content">
         <div className="japanese-message">
           <h1>知識を得る。自分のやり方で学ぼう。ベストを尽くす。</h1>
