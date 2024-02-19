@@ -1523,197 +1523,221 @@ background-color: gray;
   border-radius: 8px;
 }
 
+/* Flex container setup for horizontal layout */
 .TeamA_Footer{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
+  display: flex; 
+  justify-content: space-between; /* Distribute space between items along the main axis */
+  align-items: center; /* Align items along the cross axis */
+  position: fixed;  /* Fix the position at the bottom of the viewport */
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #BCE8B1;
-  height: 3rem;
-  padding-left: 1rem;
+  background-color: #BCE8B1; /* Background color of the footer */
+  height: 3rem;   /* Set the height of the footer */
+  padding-left: 1rem; /* Padding on the left and right sides of the footer */
   padding-right: 1rem;
 }
 
 .passstat {
-  height: 50px;
-  margin-top: 10px;
+  height: 50px; /* Set the height of the element to 50 pixels */
+  margin-top: 10px;  /* Add a top margin of 10 pixels */
 }
 
 
 
 
-
+/* Flex container setup for horizontal layout */
 .TeamA-card-container {
   display: flex;
-  align-items: stretch;
-  justify-content: center;
-  width: 100%;
-  gap: 20px;
+  align-items: stretch; /* Align items along the cross axis, stretching them to fill the container's height */
+  justify-content: center;  /* Center the items along the main axis */
+  width: 100%; /* Set the width of the container to 100% of its parent */
+  gap: 20px; /* Define the gap between child elements */
   
 
 }
 
 .TeamA-card {
   flex: 1;
-  display: flex;
+  display: flex; /* Flex container setup for vertical layout */
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #bce8b1;
-  padding: 20px;
-  border-radius: 25px;
-  max-width: 300px;
-  overflow: hidden;
-  text-align: center;
+  align-items: center;  /* Center the items along the cross axis */
+  justify-content: center;   /* Center the items along the main axis */
+  background-color: #bce8b1; /* Background color of the card */
+  padding: 20px;  /* Padding around the content of the card */
+  border-radius: 25px;  /* Rounded corners for a softer appearance */
+  max-width: 300px; /* Set the maximum width of the card */
+  overflow: hidden; /* Hide any content that overflows the card */
+  text-align: center;  /* Center the text within the card */
 }
+
+
 .TeamA-card-title {
-  font-size: small;
+  font-size: small; /* Set the font size to small */
   margin-bottom: 10px; /* Add margin to separate title from content */
-  overflow: hidden;
+  overflow: hidden; /* Hide any content that overflows the title */
   text-overflow: ellipsis; /* Add ellipsis (...) for overflow */
   white-space: nowrap; /* Prevent text from wrapping to the next line */
-  text-align: center;
-  justify-content: center;
+  text-align: center;   /* Center the text within the title */
+  justify-content: center; /* Align the text along the main axis */
 }
 
 /* .All {
   align-items:center;
   margin-left: 325px;
 } */
+
+
 .photo-section {
-  display: flex;
+  display: flex; /* Flex container setup for horizontal layout */
   justify-content: space-around; /* Adjust as needed */
   margin-top: 20px; /* Adjust as needed */
-  gap: 20px;
-  width:auto;
-  font-size: medium;
-  flex-direction: row;
-  margin-left: 10px;
+  gap: 20px;  /* Define the gap between child elements */
+  width:auto; /* Allow the width to adjust automatically based on content */
+  font-size: medium;   /* Set the font size to medium */
+  flex-direction: row; /* Flex container setup for horizontal layout */
+  margin-left: 10px;  /* Add left margin to the section */
 }
 
+
 .photo-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  display: flex; /* Flex container setup for vertical layout */
+  align-items: center; /* Align items along the cross axis */
+  justify-content: center;  /* Center the items along the main axis */
+  flex-direction: column;   /* Flex container setup for vertical layout */
   
   
 }
 
 .photo-box svg {
   /* width: 100%; Adjust as needed */
-  display: flex;
-  margin: auto;
-  height: auto;
+  display: flex; /* Allow the SVG to be treated as a flex container, adjusting its child elements */
+  margin: auto; /* Center the SVG horizontally within its container */
+  height: auto; /* Allow the SVG height to adjust automatically based on its content */
   margin-bottom: 10px; /* Adjust as needed */
 }
 
 
 .home-button {
-  cursor: pointer;
-  color: #ffffff;
-  border-radius: 100px;
-  background-color: #126912;
-  border: 1px solid #126912;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);
-  width: 5rem;
-  height: 2rem;
-  display: flex;
-  position: absolute;
-  right: 60px;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
+  cursor: pointer; /* Set the cursor to indicate interactivity */
+  color: #ffffff;  /* Text color for the button */
+  border-radius: 100px; /* Rounded corners for a circular appearance */
+  background-color: #126912; /* Background color of the button */
+  border: 1px solid #126912;  /* Border properties for the button */
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);  /* Box shadow for a subtle lift effect */
+  width: 5rem; /* Set the width of the button */
+  height: 2rem; /* Set the height of the button */
+  display: flex; /* Flex container setup for centering content */
+  position: absolute; /* Fix the position of the button */
+  right: 60px; /* Position the button on the right side with a margin */
+  text-align: center; /* Center the text horizontally within the button */
+  align-items: center; /* Align items along the cross axis */
+  justify-content: center; /* Center the items along the main axis */
 }
+
+
+/* Change the background color on hover to provide visual feedback */
 .home-button:hover {
   background-color: gray;
 }
+
 .Confirm-button{
-  margin: 10px 10px 10px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  color: #ffffff;
-  border-radius: 150px;
-  background-color: #126912;
-  border: 1px solid #126912;
-  margin-top: 50px;
+  margin: 10px 10px 10px; /* Set margin around the button (top, right, bottom, left) */
+  padding: 10px 20px; /* Set padding around the button (top, right, bottom, left) */
+  font-size: 16px; /* Set the font size of the button text */
+  cursor: pointer;  /* Set the cursor to indicate interactivity */
+  color: #ffffff; /* Text color for the button */
+  border-radius: 150px; /* Rounded corners for a circular appearance */
+  background-color: #126912; /* Background color of the button */
+  border: 1px solid #126912;  /* Border properties for the button */
+  margin-top: 50px;  /* Add margin at the top of the button */
 }
+
+/* Change the background color on hover to provide visual feedback */
 .Confirm-button:hover{
   background-color: gray;
 }
+
+
 .Show-button {
-  margin: 10px 10px 10px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  color: #ffffff;
-  border-radius: 150px;
-  background-color: #126912;
-  border: 1px solid #126912;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);
-  margin-top: 25px;
+  margin: 10px 10px 10px; /* Set margin around the button (top, right, bottom, left) */
+  padding: 10px 20px;  /* Set padding around the button (top, right, bottom, left) */
+  font-size: 16px; /* Set the font size of the button text */
+  cursor: pointer; /* Set the cursor to indicate interactivity */
+  color: #ffffff;  /* Text color for the button */
+  border-radius: 150px;  /* Rounded corners for a circular appearance */
+  background-color: #126912;  /* Background color of the button */
+  border: 1px solid #126912; /* Border properties for the button */
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);  /* Box shadow for a subtle lift effect */
+  margin-top: 25px;  /* Add margin at the top of the button */
 }
+
+
 .nav-HOME-button  {
-  background-color: #126912;
-  color: #fff;
-  padding: 5px 5px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-right: 10px;
+  background-color: #126912; /* Background color of the button */
+  color: #fff; /* Text color for the button */
+  padding: 5px 5px; /* Set padding around the button (top, right, bottom, left) */
+  border: none;  /* Remove border from the button */
+  border-radius: 5px; /* Rounded corners for a slightly curved appearance */
+  cursor: pointer; /* Set the cursor to indicate interactivity */
+  margin-right: 10px;  /* Add margin at the right of the button */
 }
+
+/* Change the background color on hover to provide visual feedback */
 .nav-HOME-button:hover{
   background-color: gray;
 }
+
+
 .nav-LOGOUT-button {
-  background-color: #126912;
-  color: #fff;
-  padding: 5px 5px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  background-color: #126912; /* Background color of the button */
+  color: #fff; /* Text color for the button */
+  padding: 5px 5px; /* Set padding around the button (top, right, bottom, left) */
+  border: none;  /* Remove border from the button */
+  border-radius: 5px; /* Rounded corners for a slightly curved appearance */
+  cursor: pointer; /* Set the cursor to indicate interactivity */
 }
+
+
+/* Change the text color on hover to provide visual feedback */
  .Show-button:hover,.nav-LOGOUT-button:hover  {
 color: gray;
 }
 
+
 .TeamA-courses {
-  display: flex;
-  justify-content: space-between;
-  width: 90%;
+  display: flex; /* Flex container setup for horizontal layout */
+  justify-content: space-between; /* Distribute space evenly between items along the main axis */
+  width: 90%;  /* Set the width of the container to 90% of its parent */
   margin-top: 20px; /* Adjust the margin as needed */
-  column-gap: 1.5rem;
+  column-gap: 1.5rem; /* Define the gap between child elements along the block axis */
 }
 
 .TeamA-courses {
-  display: flex;
+  display: flex; /* Flex container setup for horizontal layout */
   justify-content: space-around; /* Center the squares */
-  margin-top: 20px;
+  margin-top: 20px;  /* Add margin at the top of the container */
   overflow: hidden; /* Prevent any content overflow */
 }
 
 .TeamA-square {
-  width: 300px;
-  height: 20rem;
+  width: 300px; /* Set the width of the square */
+  height: 20rem;  /* Set the height of the square */
 
-  background-color: #BCE8B1;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
+  background-color: #BCE8B1; /* Background color of the square */
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); /* Box shadow for a subtle lift effect */
+  border-radius: 15px; /* Rounded corners for a slightly curved appearance */
+  display: flex;  /* Flex container setup for vertical layout */
+  flex-direction: column;  /* Flex container setup for vertical layout */
   align-items: center; /* Center the content inside the square */
-  text-align: center;
+  text-align: center;  /* Center the text horizontally within the square */
 }
 
 .TeamA-square svg {
-  width: 120px;
-  height: 120px;
-  color: #050404;
-  margin-top: 50px;
+  width: 120px; /* Set the width of the SVG */
+  height: 120px;  /* Set the height of the SVG */
+  color: #050404; /* Set the color of the SVG */
+  margin-top: 50px;  /* Add top margin to adjust the space between the SVG and other content */
 }
 
 .TeamA-square h3,
@@ -1721,34 +1745,39 @@ color: gray;
 .TeamA-square h5,
 .TeamA-square h6 {
   margin-top: 20px; /* Adjust as needed */
-  font-weight: bold;
-  font-size: x-large;
+  font-weight: bold;  /* Set the font weight to bold for emphasis */
+  font-size: x-large;  /* Set the font size to x-large for a larger text size */
 }
 
 .data-validation {
-  display: flex;
-  height: 50px;
-  margin-top: 10px;
+  display: flex; /* Flex container setup for horizontal layout */
+  height: 50px; /* Set the height of the element */
+  margin-top: 10px; /* Add top margin to the element */
 }
 
 
 .teamDimg {
-  height: 50px;
-  width: auto;
+  height: 50px; /* Set the height of the element */
+  width: auto; /* Allow the width to adjust automatically based on content */
 }
 
+/* Media query for screens with a maximum width of 900 pixels */
 @media only screen and (max-width: 900px) 
 {
+   /* Adjust the height of the element with the ID 'root' to 100% viewport height */
     #root
     {
       height: 100vh;
     }    
 
+  /* Flex container setup for horizontal layout, wrapping to the next line */
    .TeamA-courses
    {
     display: flex;
     flex-wrap: wrap;
+     /* Distribute space evenly between items along the main axis */
     justify-content: space-evenly; 
+     /* Align items along the cross axis, centering them vertically */
     align-items: center;
 
    }
