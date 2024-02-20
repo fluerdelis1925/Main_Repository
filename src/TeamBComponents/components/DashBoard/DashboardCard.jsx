@@ -95,8 +95,8 @@ const DashboardCard = () => { //Define Dashboard component
         <Footer /> 
       </div>
 
-      <div className="absolute transform -translate-x-1/2 -translate-y-1/2 top-[45%] left-1/2"> {/* Render dashboard hover */}
-        <div className="fixed inset-0 flex justify-center items-center">
+      <div className="absolute transform -translate-x-1/2 -translate-y-1/2 top-[45%] left-1/2 "> {/* Render dashboard hover */}
+        <div className="fixed inset-0 flex items-center justify-center">
           {courses.map((course, idx) => { // Map through courses to render DashboardCardHover component
             const { course_id } = course;
             return (

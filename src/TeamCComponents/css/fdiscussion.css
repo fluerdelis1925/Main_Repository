@@ -205,6 +205,15 @@
     background-color: #165207;
   }
 
+  #TeamBReturnButtonFf {
+    position: fixed;
+    top: 80px;
+    left: 20px;
+    font-size: 24px;
+    width: 55px;
+    background-color: #165207;
+  }
+
   .dropdown-menu.show {
     transform: translateX(-89%);
   }

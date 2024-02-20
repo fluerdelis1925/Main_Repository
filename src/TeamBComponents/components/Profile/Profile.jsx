@@ -54,8 +54,6 @@ const Profile = () => {
   // } = instructor;
 
   //2-17-24
-  
-  
 
   //destructure profile context
   const { showPersonalInfo, showAccDetails, showPInfo, showADetails } =
@@ -67,18 +65,17 @@ const Profile = () => {
         <div>
           {/* Use react icon instead of word back */}
           <div
-            className="flex items-center mt-3 cursor-pointer px-5 w-[10%]"
+            className="flex items-center mt-3 cursor-pointer pl-1 lg:px-5 w-[10%]"
             onClick={goBack}>
             <span className="text-[2.5rem]">
               <IoArrowBackCircle />
             </span>
-           
           </div>
         </div>
         {/* 1/11/2024 fix nav */}
         <div className="flex flex-col lg:flex-row lg:justify-center lg:gap-5 lg:mt-1 ">
-          <div className="lg:w-[20%] xl:w-[449px] xl:h-[440px] lg:h-[35vh] lg:shadow-lg bg-[#BCE8B1] lg:flex lg:items-center lg:flex-col lg:rounded-md">
-            <p className="lg:p-5 lg:text-[1.2rem] xl:text-[32px] font-bold text-[#4D4141] opacity-[80%]">
+          <div className=" lg:w-[20%] xl:w-[449px] xl:h-[440px] lg:h-[35vh] lg:shadow-lg lg:bg-[#BCE8B1] lg:flex lg:items-center lg:flex-col lg:rounded-md">
+            <p className="lg:p-5 text-[2rem] lg:text-[1.2rem] xl:text-[32px] font-bold text-[#4D4141] opacity-[80%] text-center lg:text-start">
               Profile Management
             </p>
 
@@ -87,28 +84,31 @@ const Profile = () => {
             {/* When element Personal Info clicked, must navigate to Personal Info Component same as Acc Details */}
             {/* Use react icon instead of plain text for better UI in mobile and desktop */}
             {/* In desktop mode when hovered a text Personal Information must show, same as Account Details */}
-            <p
-              className={
-                showPersonalInfo
-                  ? "cursor-pointer lg:mt-2 lg:p-2 lg:text-[1.2rem] xl:text-[32px] text-[#000000] opacity-[53%] bg-[#126912] lg:w-[100%] lg:text-center bg-opacity-[25%] "
-                  : "cursor-pointer lg:mt-2 lg:p-2 lg:text-[1.2rem] xl:text-[32px] text-[#4D4141] hover:text-[#000000] opacity-[53%] lg:w-[100%] lg:text-center "
-              }
-              onClick={showPInfo}>
-              Personal Information
-            </p>
-            <p
-              className={
-                showAccDetails
-                  ? "cursor-pointer lg:text-[1.2rem] xl:text-[32px] lg:p-2 text-[#000] opacity-[53%] bg-[#126912] lg:w-[100%] lg:text-center bg-opacity-[25%]"
-                  : "cursor-pointer lg:text-[1.2rem] xl:text-[32px] lg:p-2 text-[#4D4141] hover:text-[#000] opacity-[53%]  lg:w-[100%] lg:text-center "
-              }
-              onClick={showADetails}>
-              Account Details
-            </p>
+            <div className="flex lg:flex-col w-[100%] lg:w-full items-center justify-center gap-x-5 py-2 lg:py-0">
+              <p
+                className={
+                  showPersonalInfo
+                    ? "cursor-pointer p-1 rounded-md lg:mt-2 lg:p-2 lg:text-[1.2rem] xl:text-[32px] text-[#000000] opacity-[53%] bg-[#126912] lg:w-[100%] lg:text-center bg-opacity-[25%] "
+                    : "cursor-pointer p-1 rounded-md lg:mt-2 lg:p-2 lg:text-[1.2rem] xl:text-[32px] text-[#4D4141] hover:text-[#000000] opacity-[53%] lg:w-[100%] lg:text-center "
+                }
+                onClick={showPInfo}>
+                Personal Information
+              </p>
+              <p
+                className={
+                  showAccDetails
+                    ? "cursor-pointer p-1 rounded-md lg:text-[1.2rem] xl:text-[32px] lg:p-2 text-[#000] opacity-[53%] bg-[#126912] lg:w-[100%] lg:text-center bg-opacity-[25%]"
+                    : "cursor-pointer p-1 rounded-md lg:text-[1.2rem] xl:text-[32px] lg:p-2 text-[#4D4141] hover:text-[#000] opacity-[53%]  lg:w-[100%] lg:text-center "
+                }
+                onClick={showADetails}>
+                Account Details
+              </p>
+            </div>
           </div>
-          <div>
+          <div className="flex justify-center lg:justify-start">
             {/* Place your Component here */}
-            {showPersonalInfo && <PersonalInfo /> /* 2-17-24<div>
+            {
+              showPersonalInfo && <PersonalInfo /> /* 2-17-24<div>
               {instructor.map((inst, idx) => {
                 const {instructor_name} = inst
                 return (
@@ -117,7 +117,8 @@ const Profile = () => {
                   </div>
                 );
               })}
-            </div> 2-17-24*/}
+            </div> 2-17-24*/
+            }
             {showAccDetails && <AccDetails />}
             {/* /* Place AccDetails Component here */}
             {/* <AccDetails/> */}

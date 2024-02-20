@@ -14,19 +14,9 @@ const ProfileEdit = ({ handleClose }) => {
     
   return (
     <div>
-      {/* Home header with the company logo */}
-     <div className="home-header">
-        <img
-           src="..\src\assets\TeamAassets\companyLogo.png"
-          alt="Logo"
-          className="Qlogo"
-          
-        />
-      </div>
+      <div className="Prof2-content">
         <div className="Prof2-sign">
-          {/* Render the profile edit form */}
-          <ProfileEditForm/>
-
+          <ProfileEditForm handleClose={handleClose}/>
         </div>
       </div>
     </div>
