@@ -118,132 +118,73 @@ const handleInputChange = (e, isFile = false) => {
 
   const handleProfilePictureUpload = async () => {
     try {
-      const userId = localStorage.getItem('userId');
-      const authToken = localStorage.getItem('authToken');
 
-      const formData = new FormData();
-      formData.append('userId', userId);
-      formData.append('file', updateData.profilePicture);
-
-      const response = await fetch(`http://localhost:8085/api/v1/auth/upload-pp`, {
-        method: 'POST',
+      const response = await fetch(`http://localhost:8085/api/v1/update/${email}`, {
+        method: 'PUT', // Using the PUT method for updating data
         headers: {
-          'Authorization': `Bearer ${authToken}`,
+          'Content-Type': 'application/json', // Specifying JSON content type for the request body
         },
-        body: formData,
+        body: JSON.stringify({// Convert the data to JSON format
+      email, // Include the user's email in the request body
+      username, // Include the updated username
+      firstName, // Include the updated first name
+      lastName, // Include the updated last name
+        }),
       });
 
-      if (response.ok) {
-        console.log('Profile picture uploaded successfully');
-      } else {
-        console.error('Profile picture upload failed', response.status, response.statusText);
-        // Handle the error as needed
-      }
-    } catch (error) {
-      console.error('Unexpected error during profile picture upload', error);
-      // Handle unexpected errors
-    }
+      // Check if the response is successful
+if (response.ok) {
+  console.log('Profile updated successfully'); // Log a success message if the update was successful
+} else {
+  console.error('Profile update failed'); // Log an error message if the update failed
+}
+} catch (error) {
+  console.error('Error during profile update:', error); // Log any errors that occurred during the update process
+}
   };
-
-  const handleUpdate = async () => {
-    try {
-        const userId = localStorage.getItem('userId');
-        const authToken = localStorage.getItem('authToken');
-
-        const updateFields = {};
-
-        // Check if each field has been modified and add it to the updateFields object
-        if (updateData.firstName !== userData.firstName) {
-            updateFields.firstName = updateData.firstName;
-        }
-
-        if (updateData.lastName !== userData.lastName) {
-            updateFields.lastName = updateData.lastName;
-        }
-
-        if (updateData.userName !== userData.userName) {
-            updateFields.userName = updateData.userName;
-        }
-
-        // Add more fields as needed
-
-        const response = await fetch(`http://localhost:8085/api/v1/auth/update/${userId}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${authToken}`,
-            },
-            body: JSON.stringify(updateFields),
-        });
-
-        if (response.ok) {
-            console.log('Profile updated successfully');
-            handleClose();
-        } else {
-            console.error('Update failed', response.status, response.statusText);
-            // Handle update failure
-        }
-    } catch (error) {
-        console.error('Unexpected error during update', error);
-        // Handle network or unexpected errors
-    }
-};
-
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    // Upload profile picture
-    await handleProfilePictureUpload();
-
-    // Update general profile information
-    await handleUpdate();
-  };
-
-  const handleCancel = () => {
-    handleClose();
-  }
-
-  const handleChooseFileClick = () => {
-    // Trigger the file input when the custom button is clicked
-    fileInputRef.current.click();
-  };
-
-  return (
-    <div className="Prof2-wrapper">
-      <div className="Prof2-left">
-        <label htmlFor="profilePicture">Profile Picture</label>
-        <button className="TeamA-button" onClick={handleChooseFileClick}>
-          Choose File
-        </button>
-        {/* Hidden file input */}
-        <input
-          type="file"
-          id="profilePicture"
-          name="profilePicture"
-          ref={fileInputRef}
-          onChange={(e) => handleInputChange(e, true)}
-          accept="image/*"
-          style={{ display: 'none' }}
-        />
-        {imagePreview && (
-          <img
-            src={imagePreview}
-            alt="Profile Preview"
-            style={{ width: '100px', height: '100px', marginTop: '10px' }}
-          />
-        )}
-        <h4>{updateData.firstName} {updateData.lastName}</h4>
-        <p>Position name</p>
-      </div>
-      <div className="Prof2-right">
-        {userData && Object.keys(userData).length > 0 && ( // Check if userData is not null and not an empty object
+    // const handleFormSubmit = (e) => {
+    //   e.preventDefault();
+    //   onProfileEditForm(verification);
+    //   console.log('Verification code submitted:', verification);
+    //   // You can add further logic or redirection if needed
+    // };
+  
+    return (
+      {/* Container for the profile edit form */}
+  <div>
+    {/* Link to navigate back to the profile page */}
+    <Link to="/profile">
+      {/* Button with arrow-left icon */}
+      <button className="Prof2-Backbutton">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-left" viewBox="0 0 16 16">
+          <path fillRule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+        </svg>
+      </button>
+        </Link>
+        </div>
+        <div className="Prof2-left">
+      {/* SVG icon representing a person */}
+        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" className="bi bi-person-lines-fill" viewBox="0 0 16 16">
+          <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1z"/>
+        </svg>
+      {/* Title for the section */}
+          <h4>Name</h4>
+            {/* Placeholder for the position name */}
+          <p>Position name</p>
+        </div>
+        <div className="Prof2-right">
+            {/* Section for profile information */}
           <div className="Prof2-info">
-            <h3>Profile Information</h3>
-            <form onSubmit={handleSubmit} className="Prof2-info_data">
-              {/* Existing form fields */}
+            {/* Title for the section */}
+          <h3>Profile Information</h3>
+          {/* Form for updating profile data */}
+            <form onSubmit={handleUpdate} className="Prof2-info_data">
+             {/* Container for each data field */}
+
               <div className="Prof2-data">
+                {/* Label for the first name input field */}
                 <label htmlFor="firstName">First Name</label>
+                {/* Input field for entering the first name */}
                 <input
                   type="text"
                   id="firstName"
@@ -252,13 +193,24 @@ const handleInputChange = (e, isFile = false) => {
                   onChange={handleInputChange}
                   placeholder="Enter your first name"
                 />
+                {/* Label for the email input field */}
                 <label htmlFor="email">Email</label>
-                <div className="data">
-                  {userData && <p>{userData.email}</p>}
-                </div>
+
+                {/* Input field for entering the email */}
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email"
+                />
+
               </div>
               <div className="Prof2-data">
+                {/* Label for the last name input field */}
                 <label htmlFor="lastName">Last Name</label>
+                {/* Input field for entering the last name */}
                 <input
                   type="text"
                   id="lastName"
@@ -267,19 +219,23 @@ const handleInputChange = (e, isFile = false) => {
                   onChange={handleInputChange}
                   placeholder="Enter your last name"
                 />
+                {/* Label for the username input field */}
                 <label htmlFor="username">Username</label>
+                {/* Input field for entering the username */}
                 <input
                   type="text"
-                  id="userName"
-                  name="userName"
-                  value={updateData.userName}
-                  onChange={handleInputChange}
+
+                  id="username"
+                  name="usermame"  {/* Name attribute for the username */}
+                  value={username}
+                  onChange={(e) => setUserName(e.target.value)} {/* Update the username state */}
+
                   placeholder="Enter your username"
                 />
               </div>
               {/* Update and Cancel buttons */}
               <div className="Prof2-buttons">
-                <button className="submit-button" type="submit">
+                <button className="submit-button">
                   Update
                 </button>
                 <Link to="#">
@@ -290,8 +246,10 @@ const handleInputChange = (e, isFile = false) => {
           </div>
         )}
       </div>
-    </div>
-  );
-}
 
-export default ProfileEditForm;
+    );
+  }
+  
+  export default ProfileEditForm;
+  
+

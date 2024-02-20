@@ -87,8 +87,14 @@ const CourseListCard = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   //Search
-  const filteredCourses = courses.filter((course) =>
-    course.course_title.toLowerCase().includes(searchQuery.toLowerCase())
+  // const filteredCourses = courses.filter((course) =>
+  //   course.course_title.toLowerCase().includes(searchQuery.toLowerCase())
+  // );
+
+  const filteredCourses = courses.filter(
+    (course) =>
+      typeof course.course_title === "string" &&
+      course.course_title.toLowerCase().includes(searchQuery.toLowerCase())
   );
   const [hideSearch, setHideSearch] = useState(false);
 
@@ -185,10 +191,9 @@ const CourseListCard = () => {
                       <div className="bg-[#BCE8B1] flex py-1 item-center justify-center text-center text-[.8rem] lg:text-[1rem] w-[30%] lg:w-[20%] lg:p-5 rounded-l-sm lg:rounded-l-md">
                         <p className="lg:font-medium TeamB_text-shadow h-[8vh] flex items-center  ">
                           {/* change to course_id for api connection */}
-                          PL00{courseCount}
+                          CC00{courseCount}
                         </p>
                       </div>
-
                       <Link
                         to={`/teambcourseoverview/${course.course_id}`}
                         className="text-white TeamB_text-shadow lg:font-bold text-[.8rem] py-1 lg:py-0 lg:text-[1.2rem] w-full flex justify-left px-3 items-center

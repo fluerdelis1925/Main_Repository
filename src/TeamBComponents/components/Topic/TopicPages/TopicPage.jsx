@@ -131,14 +131,13 @@ const TopicPage = () => {
                                     }}>
                                     {topic_title}
                                   </p>
-                                 
+
                                   <span
                                     className="text-[1.5rem] text-white cursor-pointer"
                                     onClick={() => {
-                                     setDeleteModalVisible((prev) => !prev);
+                                      setDeleteModalVisible((prev) => !prev);
                                       // deleteTopic(topic_id);
                                     }}>
-                                    
                                     <MdDelete />
                                   </span>
                                 </div>
@@ -194,23 +193,17 @@ const TopicPage = () => {
             {showAddTopic && (
               <div className="">
                 {courses.map((course, idx) => {
-                  const { chapter, course_title } = course;
-                  console.log(course_title);
+                  const { course_title } = course;
+                  {
+                    /* console.log(course_title); */
+                  }
                   return (
                     <div key={idx}>
-                      {chapter.map((chap, idx) => {
-                        const { chapter_id, chapter_title } = chap;
-                        console.log(chap);
-                        return (
-                          <div key={idx}>
-                            <AddTopic
-                              chapterId={chapter_id}
-                              courseTitle={course_title}
-                              chapterTitle={chapter_title}
-                            />
-                          </div>
-                        );
-                      })}
+                      <AddTopic
+                        // chapterId={chapter_id}
+                        courseTitle={course_title}
+                        // chapterTitle={chapter_title}
+                      />
                     </div>
                   );
                 })}

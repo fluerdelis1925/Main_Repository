@@ -1,26 +1,26 @@
 // 1/31/2024 from junite, to ced. TODO
 //Only show
 
-import React, { useContext } from "react";
-import logo from "../../../assets/TeamBassests/companyLogo.png";
+import React, { useContext } from "react"; // Importing React and useContext hook
+import logo from "../../../assets/TeamBassests/companyLogo.png"; // Importing logo image
 
 //import react icon
 import { GiHamburgerMenu } from "react-icons/gi";
-import NavSideBar from "./NavSideBar";
-import { Link } from "react-router-dom";
-import { CgProfile } from "react-icons/cg";
-import { MdOutlineLogout } from "react-icons/md";
-//import profile logo
+import NavSideBar from "./NavSideBar"; // Importing NavSideBar component
+import { Link } from "react-router-dom"; // Importing Link component from react-router-dom
+import { CgProfile } from "react-icons/cg"; // Importing CgProfile icon component
+import { MdOutlineLogout } from "react-icons/md"; //// Importing MdOutlineLogout icon component
+//import profile logo image file
 import profileLogo from "../../../assets/TeamBassests/Picture.png";
 
-//import react icon
+//importing react icon
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
+//Importing NavBarContext from context
 import { NavBarContext } from "../context/NavBarContext";
-
-
-
+//Nav functional component
 const Nav = () => {
+  //Destructuring values from NavBarContext
   const {
     header,
     dashBoardShow,
@@ -36,12 +36,13 @@ const Nav = () => {
     showProfile,
     showCourseList,
     showForum,
-            forumShow,
-            setForumShow,
+    forumShow,
+    setForumShow,
   } = useContext(NavBarContext);
 
   return (
     <>
+      {/* Navigation bar */}
       <nav className="fixed w-full top-0 z-[100] ">
         <div
           className={
@@ -49,6 +50,7 @@ const Nav = () => {
               ? "relative flex justify-between items-center lg:justify-normal bg-[#D9FFCF] h-[69px] transition-all "
               : "relative flex justify-between items-center lg:justify-normal bg-transparent h-[69px] transition-all "
           }>
+          {/* Link to Dashboard*/}
           <Link to="/teambdashboard">
             <img
               className="m-auto xl:w-[171.67px] xl:h-[50px] lg:h-[5rem] xl:ml-[95px] py-3 xl:py-1"
@@ -62,6 +64,7 @@ const Nav = () => {
           </Link>
           <div className="hidden lg:flex lg:items-end xl:w-[300px] lg:pl-10 lg:min-w-[280px] lg:justify-between gap-5">
             {/* 1/11/2024 */}
+            {/* Link to dashboard */}
             <Link to="/teambdashboard" onClick={showDashBoard}>
               <ul
                 className={
@@ -71,8 +74,8 @@ const Nav = () => {
                 }>
                 Dashboard
               </ul>
-          
             </Link>
+            {/* Link to course list */}
             <Link to="/teambcourselist" onClick={showCourseList}>
               <ul
                 className={
@@ -82,9 +85,9 @@ const Nav = () => {
                 }>
                 Course List
               </ul>
-           
             </Link>
-            <Link to="/ForumFInstructor"  onClick={showForum}>
+            {/* Link to forum */}
+            <Link to="/ForumFInstructor" onClick={showForum}>
               <ul
                 className={
                   forumShow
@@ -95,14 +98,40 @@ const Nav = () => {
               </ul>
             </Link>
           </div>
-          <div className="relative flex items-center px-3 lg:hidden">
-            <GiHamburgerMenu
+          {/* Hamburger menu for mobile view */}
+          <div className="relative flex items-center lg:hidden w-[60%] md:w-[50%] justify-end">
+            {show ? (
+              <div className="flex w-full">
+                <div className=" m-auto TeamB_text-shadow gap-x-4 py-1 px-2 bg-[#bce8b1] rounded-[8rem] shadow-lg flex justify-center items-center lg:hidden">
+                  <img
+                    className="h-[6vh] rounded-[50%] border-2 border-green-800"
+                    src={profileLogo}
+                    alt="profileLogo"
+                    onClick={() => setShow((prev) => !prev)}
+                  />
+                  <div className="text-[.8rem] leading-3">
+                    <p>Judes Macabales</p>
+                    <p>jmacabales@tgsi.com.ph</p>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="w-[70%] flex justify-end pr-2">
+                <img
+                  className="h-[6vh] rounded-[50%] border-2 border-green-800"
+                  src={profileLogo}
+                  alt="profileLogo"
+                  onClick={() => setShow((prev) => !prev)}
+                />
+              </div>
+            )}
+
+            {/* <GiHamburgerMenu
               className="text-[2rem]"
               onClick={() => setShow((prev) => !prev)}
-            />
-            {/* 01/31/2024 - Cedrick - Adjusted the design of nav bar and changed the picture in the profile */}
-            {show && <NavSideBar />}
+            /> */}
           </div>
+          {/* Profile dropdown */}
           <div className="drop-shadow-lg shadow-lg  bg-[#ffffff] absolute right-3 cursor-pointer lg:text-[1rem] lg:w-[15vw] 2xl:w-[193px] h-[7vh] rounded-md ml-auto hidden border-lime-900 border-[.1rem] lg:flex justify-between items-center p-1 text-[#126912]">
             <img
               src={profileLogo}
@@ -120,8 +149,10 @@ const Nav = () => {
               className="cursor-pointer">
               {showDropDown ? <FaChevronUp /> : <FaChevronDown />}
             </span>
+            {/* Dropdown content */}
             {showDropDown && (
               <div className="bg-[#D9FFCF] absolute right-0 top-10 w-full flex flex-col justify-between rounded-md items-center border-solid border-[1px] border-[#116211]">
+                {/* Link to profile */}
                 <Link
                   to="/teambprofile"
                   onClick={showProfile}
@@ -130,7 +161,7 @@ const Nav = () => {
                     className={
                       profileShow
                         ? showDropDown
-                          ? " text-[#116211] rounded-md text-start p-1 transition-all bg-[#D9FFCF]  text-left p-1-shadow  "
+                          ? " text-[#116211] rounded-md text-start p-1 transition-all bg-[#D9FFCF]   p-1-shadow  "
                           : ""
                         : showDropDown
                         ? " text-[#000000] rounded-md text-start p-1  hover:text-[#116211]"
@@ -140,6 +171,7 @@ const Nav = () => {
                     Profile
                   </p>
                 </Link>
+                {/* Link to logout */}
                 <Link
                   to="/"
                   src="CgProfile"
@@ -149,7 +181,7 @@ const Nav = () => {
                     className={
                       profileShow
                         ? showDropDown
-                          ? " text-red-600 hover:text-red-500 text-start transition-all rounded-md text-left p-1  hover:bg-opacity-[50%] "
+                          ? " text-red-600 hover:text-red-500 text-start transition-all rounded-md  p-1  hover:bg-opacity-[50%] "
                           : ""
                         : showDropDown
                         ? " text-red-600 rounded-md text-start p-1 bg-[#D9FFCF]  hover:text-red-500"
@@ -163,10 +195,15 @@ const Nav = () => {
             )}
           </div>
         </div>
+        {show && (
+          <div className="absolute flex justify-end w-full top-[4.3rem] lg:hidden backdrop-blur-[.1rem]">
+            <NavSideBar />
+          </div>
+        )}
       </nav>
     </>
   );
 };
 
-export default Nav;
-
+export default Nav; // Exporting the Nav component as default
+//comments by: Judes 02-19-24

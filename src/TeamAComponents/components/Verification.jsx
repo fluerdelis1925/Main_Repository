@@ -7,18 +7,36 @@ function Verification() { // Corrected function name
   return (
     <div className="verification-container">
       <div className="verification-header">
-        <img src="/assets/images/companyLogo.png" alt="Logo" className="verification-logo" />
+
+         {/* Logo */}
+        <img
+          src="../../assets/TeamAassets/companyLogo.png"
+          alt="Logo"
+          className="verification-logo"
+        />
+
       </div>
+      {/* Container for verification navigation */}
       <div className="verification-navi">
-      <div className="home-button">
-          <Link to="/dashboard">
-            <button className="login-button">Home</button>
+
+         {/* Home button */}
+        <div className="home-button">
+           {/* Link to home */}
+          <Link to="/">
+            {/* Home button */}
+            <button>Home</button>
+
           </Link>
           </div>
       </div>
       <div className="content">
+         {/* Verification sign */}
         <div className="verification-sign">
-          <VerificationForm/>
+
+          {/* Verification form component */}
+          <VerificationForm onVerification={onVerification} />{" "}
+          {/* Corrected component name */}
+
         </div>
       </div>
     </div>

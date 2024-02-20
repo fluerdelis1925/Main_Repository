@@ -120,16 +120,16 @@ const EditTopic = ({ topicId, courseTitle, chapterTitle }) => {
   };
 
   //store url in a variable
-  const docs = [
-    {
-      uri: "https://rb.gy/wjgxf3",
-      fileType: "pptx",
-    }, // Remote file
-    // { uri: require("./example-files/pdf.pdf") }, // Local File
-  ];
+  // const docs = [
+  //   {
+  //     uri: "https://rb.gy/wjgxf3",
+  //     fileType: "pptx",
+  //   }, // Remote file
+  //   // { uri: require("./example-files/pdf.pdf") }, // Local File
+  // ];
 
-  const linkToPPTFile =
-    "https://onedrive.live.com/embed?resid=45112E029C22DBF%21345&authkey=!APHTfuIo5T7hg4w&em=2";
+  // const linkToPPTFile =
+  //   "https://onedrive.live.com/embed?resid=45112E029C22DBF%21345&authkey=!APHTfuIo5T7hg4w&em=2";
 
   const [showEmbedded, setShowEmbedded] = useState(false);
 
@@ -180,7 +180,7 @@ const EditTopic = ({ topicId, courseTitle, chapterTitle }) => {
         </div>
 
         <div className="relative flex w-[90%] m-auto items-center justify-center lg:gap-x-[5rem] lg:mt-[3rem]">
-          <div className="relative 2xl:w-[491px] 2xl:h-[282px] lg:w-[20vw] lg:h-[20vh] rounded-lg flex items-center justify-center cursor-pointer ">
+          <div className="relative 2xl:w-[491px] 2xl:h-[282px] lg:w-[20vw] lg:h-[20vh] rounded-lg flex items-center justify-center cursor-pointer bg-white">
             {/* <img src={EditTopiclink} alt="" className="" /> */}
             <iframe
               src={topic_file}
@@ -201,7 +201,7 @@ const EditTopic = ({ topicId, courseTitle, chapterTitle }) => {
           </div>
 
           <div
-            className="relative 2xl:w-[491px] 2xl:h-[282px] lg:w-[20vw] lg:h-[20vh] rounded-lg flex items-center justify-center cursor-pointer"
+            className="relative 2xl:w-[491px] 2xl:h-[282px] lg:w-[20vw] lg:h-[20vh] rounded-lg flex items-center justify-center cursor-pointer bg-white"
             onClick={toggleQuizPopup}>
             <img src={EditQuizLink} alt="" className="" />
             <span className="absolute ">

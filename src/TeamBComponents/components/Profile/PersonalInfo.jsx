@@ -22,7 +22,7 @@ const PersonalInfo = ({ intructorName }) => {
 
   useEffect(() => {
     const loadInstructors = async () => {
-      const result = await axios.get("http://localhost:8080/instructors");
+      const result = await axios.get("http://localhost:8080/api/instructors");
       setInstructors(result.data);
     };
 
@@ -82,8 +82,7 @@ const PersonalInfo = ({ intructorName }) => {
                     type="text"
                     name="instructor_first_name" //should be edited
                     value={instructor_first_name}
-                    onChange={(e) => handleInputChange(e)}
-                    maxLength={50}
+
                     disabled
                   />
                 </div>
@@ -102,7 +101,6 @@ const PersonalInfo = ({ intructorName }) => {
                     type="text"
                     name="instructor_last_name" //edit
                     value={instructor_last_name}
-                    onChange={(e) => handleInputChange(e)}
                     disabled
                   />
                   <div className="mt-3 lg:flex lg:gap-y-7 lg:flex-col xl:gap-y-10">
@@ -121,7 +119,6 @@ const PersonalInfo = ({ intructorName }) => {
                         type="number"
                         name="instructor_username" //edit
                         value={instructor_email}
-                        onChange={(e) => handleInputChange(e)}
                         disabled
                       />
                     </div>
@@ -140,7 +137,6 @@ const PersonalInfo = ({ intructorName }) => {
                         id="ContactNumber"
                         name="instructor_contact_number" //edit
                         value={instructor_contact_number}
-                        onChange={(e) => handleInputChange(e)}
                         disabled
                       />
                       <div />
@@ -168,3 +164,4 @@ const PersonalInfo = ({ intructorName }) => {
 export default PersonalInfo;
 
 //1/19/2024
+

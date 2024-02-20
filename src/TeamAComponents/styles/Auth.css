@@ -5,79 +5,94 @@
   text-align: center;
 }
 
-.app-header {
-  background-color: #282c34;
-  padding: 20px;
-  color: white;
-  margin: 0;
-}
+/* Styles for the header of the application */
 
+.app-header {
+  background-color: #282c34; /* Background color */
+  padding: 20px; /* Padding around the header content */
+  color: white; /* Text color */
+  margin: 0; /* Remove any default margin */
+}
+/* Styles for the TeamA button */
 .TeamA-button {
-  margin: 10px 10px 10px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  color: #ffffff;
-  border-radius: 150px;
-  background-color: #126912;
-  border: 1px solid #126912;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);
+  margin: 10px 10px 10px; /* Margin on all sides */
+  padding: 10px 20px; /* Padding inside the button */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Cursor style */
+  color: #ffffff; /* Text color */
+  border-radius: 150px; /* Border radius to make it circular */
+  background-color: #126912; /* Background color */
+  border: 1.5px solid #126912; /* Border color and width */
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5); /* Box shadow for a raised effect */
+
 }
 .TeamA-button:hover {
   background-color: gray;
 }
 
 
+/* Styles for the login button */
 .login-button
 {
-  cursor: pointer;
-  color: #ffff;
-  border-radius: 100px;
-  background-color: #126912;
-  border: 1px solid #126912;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);
-  width: 5rem;
-  height: 2rem;
+  cursor: pointer; /* Cursor style */
+  color: #ffff; /* Text color */
+  border-radius: 100px; /* Border radius to make it circular */
+  background-color: #126912; /* Background color */
+  border: 1px solid #126912; /* Border color and width */
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5); /* Box shadow for a raised effect */
+  width: 5rem; /* Width of the button */
+  height: 2rem;/* Height of the button */
+}
 } 
+
+/* Styles for the home container */
+
 .login-button:hover {
 background-color: gray;
 }
 
 .home-container {
-  text-align: center;
+  text-align: center; /* Center align content */
 }
 
+/* Styles for the home header */
 .home-header {
-  background-color: #D9FFCF;
-  padding: 10px;
-  height: 70px;
-  text-align: center;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0;
+  background-color: #D9FFCF; /* Background color */
+  padding: 10px; /* Padding around the header */
+  height: 70px;  /* Height of the header */
+  text-align: center;  /* Center align text */
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between;  /* Space evenly between items */
+  align-items: center; /* Center align items vertically */
+  margin: 0; /* Remove margin */
 }
 
+/* Styles for the left container */
 .left-container {
-  display: flex;
-  align-items: center;
-  margin-left: 20px;
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Align items vertically */
+  margin-left: 20px; /* Add margin to the left */
 }
 
+/* Styles for buttons inside the right container */
 .right-container button{
-  align-items: center;
-  margin-right: 20px;
+  align-items: center;  /* Align items vertically */
+  margin-right: 20px; /* Add margin to the right */
 } 
 
+/* Styles for the logo container */
 .logo-container {
-  display: flex;
-  align-items: center;
+  display: flex; /* Display as flex */
+  align-items: center; /* Align items vertically */
   
 }
 
-.logo {
-  width: 170px;
-  height: auto;
+
+/* Styles for the logo image */
+.Qlogo {
+  width: 170px; /* Set width */
+  height: auto; /* Automatically adjust height */
+
 }
 
 
@@ -86,7 +101,7 @@ background-color: gray;
 }
 
 .home-header nav a {
-  text-decoration: none;
+  text-decoration: none;  /* Remove underline */
   color: #000; /* Default link color */
 }
 
@@ -99,40 +114,53 @@ background-color: gray;
 }
 
 
-
-.japanese-message h1 {
-  color: #F6F6F6;
-  font-family: Inter;
-  font-size:2rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  margin: 55px;
-  margin-top:20px;
-  text-align: center;
+.home-content {
+   display: flex; /* Display items as a flex container */
+  flex-direction: column; /* Arrange items vertically */
+  align-items: center; /* Center items along the cross-axis (vertical centering) */
+  justify-content: center; /* Center items along the main-axis (horizontal centering) */
 }
 
+
+/* Styles for the Japanese message heading */
+.japanese-message h1 {
+
+  color: #F6F6F6; /* Text color */
+  font-family: Inter; /* Font family */
+  font-size: 35px; /* Font size */
+  font-style: normal; /* Font style */
+  font-weight: 700; /* Font weight (bold) */
+  line-height: normal; /* Line height */
+  margin: 55px; /* Margin for all sides */
+  margin-top: 20px; /* Margin top */
+
+}
+
+/* Styles for the Japanese message container with text shadow */
 .japanese-message {
   text-shadow:
-    -2px -2px 2px #009545, 
-    2px -2px 2px #009545, 
-    -2px 2px 2px #009545, 
-    2px 2px 2px #009545;
+    -2px -2px 2px #009545,  /* Shadow on the top left */
+    2px -2px 2px #009545,  /* Shadow on the top right */
+    -2px 2px 2px #009545,  /* Shadow on the bottom left */
+    2px 2px 2px #009545;  /* Shadow on the bottom right */
 }
 
+/* Styles for the English message heading */
 .english-message h1 {
-  color: #587354;
-  font-family: Inter;
-  font-size:2rem;
-  font-style: italic;
-  font-weight: 700;
-  margin-top:-65px;
-  margin-bottom: 10px;
-  text-align: center;
+
+  color: #587354;         /* Text color */    
+  font-family: Inter;      /* Font family */
+   font-size: 35px;        /* Font size */
+  font-style: italic;     /* Italic font style */
+  font-weight: 700;       /* Font weight */
+  margin-top: -65px;      /* Top margin */
+  margin-bottom: 10px;    /* Bottom margin */
+
 }
 
+/* Text shadow for the English message */
 .english-message {
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);  /* Text shadow */
 }
 
 .courses {
@@ -154,65 +182,72 @@ background-color: gray;
   text-align: center;
 }
 
+/* Styles for the authentication header */
 .auth-header {
-  background-color: #BCE8B1;
-  padding: 10px;
-  text-align: center;
-  height: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
+  background-color: #BCE8B1; /* Background color */
+  padding: 10px; /* Padding */
+  text-align: center; /* Text alignment */
+  height: 70px; /* Height */
+  display: flex; /* Flex container */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  margin: 0;  /* Margin */
 }
+}
+/* Styles for the logo */
 .logo {
   width: 170px; 
-  height: auto;
+  height: auto; /* Maintain aspect ratio */
 }
 
+/* Styles for the authentication content */
 .auth-content {
   text-align: center;
   margin-top: 0px;
 }
 
+/* Styles for the label container */
 .label-container {
  display: flex;
  justify-content: center;
 
 } 
 
+/* Styles for the container under */
 .container-under
 {
   display: flex;
-  flex-direction: column;
-  align-items: start;
+  flex-direction: column; /* Arrange items in a column */
+  align-items: start; /* Align items to the start of the cross axis */
 
 }
 
+/* Styles for the authentication label */
 .auth-label {
-  height: 60px;
-  width: 400px;
-  border-radius: 5px 5px 0px 0px;
-  background-color: #126912;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 60px; /* Set the height */
+  width: 400px; /* Set the width */
+  border-radius: 5px 5px 0px 0px; /* Apply border radius */
+  background-color: #126912; /* Set the background color */
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
 
 
 }
 
 
-/* Landing Page Nav-Bar */
+/* Styles for the landing page navigation bar */
 
 .landingPage_NavBar
 {
   background-color: #BCE8B1;
   padding: 1em 2em;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Distribute items evenly along the main axis */
   align-items: center;
 }
 
-
+/* Styles for the authentication navigation */
 .auth-navi {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -224,29 +259,33 @@ background-color: gray;
   margin: 0;
 }
 
+/* Styles for the heading within the authentication content */
 .auth-content h2 {
   font-size: 20px;
 }
 
+/* Styles for the heading within the authentication label */
 .auth-label h1 {
   font-size: 24px;
   font-weight: 400; 
   color: #ffff;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  margin: 0;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); /* Add text shadow */
+  margin: 0; /* Remove default margin */
 }
 
 
+/* Styles for the template form */
 
 .template-form{
   width: 700px;
-  margin: 0 auto;
+  margin: 0 auto; /* Center the form horizontally */
   background-color: #BCE8B1;
   padding: 20px;
-  border-radius: 5px;
-  position: relative;
+  border-radius: 5px; /* Add border radius */
+  position: relative; /* Set position to relative */
 }
 
+/* Styles for input fields inside the template form */
 .template-form input {
   width: 400px;
   padding: 20px;
@@ -255,15 +294,18 @@ background-color: gray;
   font-size: 16px;
   border: 1px solid #ccc; /* Input border color */
   border-radius: 5px;  
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05); /* Add box shadow */
   text-align: left;
 }
 
+/* Styles for h2 elements inside the template form */
 .template-form h2 {
   color: #4D4141;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); /* Add text shadow */
+}
 }
 
+/* Styles for h3 elements inside the template form */
 .template-form h3 {
   font-size: 12px;
   font-weight: 400px;
@@ -271,6 +313,7 @@ background-color: gray;
 }
 
 
+/* Styles for the forgot password link inside the template form */
 
 .template-form .forgot-password {
   color: #4D4141;
@@ -281,6 +324,7 @@ background-color: gray;
   margin-top: 10px;
 }
 
+/* Styles for the existing account link inside the template form */
 .template-form .existing-account  {
   color: #4D4141;
   font-weight: 700px;
@@ -289,25 +333,24 @@ background-color: gray;
   margin-top: 30px;
   text-decoration: underline;
 }
-.template-form .existing-account:hover {
-  color: #0056b3;
+
+/* Styles for the hover effect on the existing account and forgot password links */
+.template-form .existing-account:hover,.template-form .forgot-password:hover,.forgot-form .existing-account:hover ,.forgot-form .forgot-password:hover  {
+  color: #0056b3; /* Change text color on hover */
 }
 
-.template-form .forgot-password:hover {
-  color: #0056b3;
-}
+/* Styles for the forgot container */
 
-/* ... existing styles ... */
-
-/* New styles for Forgot.jsx form */
 .forgot-container {
 text-align: center; 
 }
 
+/* Styles for the margin of the forgot text */
 .forgottext{
   margin-top: 50px;
 }
 
+/* Styles for the forgot header */
 .forgot-header  {
 background-color: #BCE8B1;
 padding: 10px;
@@ -319,41 +362,47 @@ align-items: center;
 margin: 0;
 }
 
+/* Styles for the email logo inside the forgot logo container */
 .forgot-logo .Email-logo{
 width: 170px;
 height: auto;
 }
 
+/* Styles for the content inside the forgot container */
 .forgot-content {
 text-align: center;
 margin-top: 0px;
 }
 
+/* Styles for the forgot label */
 .forgot-label {
-height: 60px;
-width: 400px;
-border-radius: 5px 5px 0px 0px;
-background-color: #126912;
-display: flex;
-justify-content: center;
-align-items: center;
+height: 60px; /* Set the height */
+width: 400px; /* Set the width */
+border-radius: 5px 5px 0px 0px; /* Apply border radius */
+background-color: #126912; /* Set the background color */
+display: flex; /* Use flexbox for alignment */
+justify-content: center; /* Center horizontally */
+align-items: center; /* Center vertically */
 }
 
+/* Styles for the forgot navigation */
 .forgot-navi {
-padding-top: 20px;
-padding-bottom: 20px;
-height: 50px;
-justify-content: center;
-text-align: center;
-align-items: center;
-color: white;
-margin: 0;
+padding-top: 20px;/* Add padding to the top */
+padding-bottom: 20px; /* Add padding to the bottom */
+height: 50px; /* Set the height */
+justify-content: center; /* Center content horizontally */
+text-align: center; /* Center text */
+align-items: center; /* Center items vertically */
+color: white; /* Set the text color */
+margin: 0; /* Reset margin */
 }
 
+/* Styles for the forgot content heading */
 .forgot-content h2 {
-font-size: 20px;
+font-size: 20px; /* Set the font size */
 }
 
+/* Styles for the forgot label heading */
 .forgot-label h1 {
 font-size: 24px;
 font-weight: 400;
@@ -362,9 +411,7 @@ text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 margin: 0;
 }
 
-
-
-
+/* Styles for the forgot form */
 .forgot-form {
 width: 600px;
 margin: 0 auto;
@@ -373,40 +420,46 @@ padding: 50px;
 border-radius: 15px;
 }
 
+/* Styles for inputs within the forgot form */
 .forgot-form input {
-width: 400px;
-height: 30px;
-padding: 12px;
-margin-bottom: 15px;
-font-size: 16px;
-border: 1px solid #ccc;
-border-radius: 5px;
-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
+width: 400px; /* Set the width */
+height: 30px; /* Set the height */
+padding: 12px; /* Add padding */
+margin-bottom: 15px; /* Add bottom margin */
+font-size: 16px; /* Set the font size */
+border: 1px solid #ccc; /* Set the border */
+border-radius: 5px; /* Add border radius */
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05); /* Add box shadow */
 }
 
+/* Styles for h2 within the forgot form */
 .forgot-form h2 {
-color: #4D4141;
-text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+color: #4D4141; /* Set the text color */
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); /* Add text shadow */
 }
 
+/* Styles for h3 within the forgot form */
 .forgot-form h3 {
-font-size: 12px;
-font-weight: 400px;
-color: #4D4141;
+font-size: 12px; /* Set the font size */
+font-weight: 400px; /* Set the font weight */
+color: #4D4141; /* Set the text color */
 }
 
+/* Styles for button within the forgot form */
 .forgot-form button {
-margin: 20px;
-}
+margin: 20px; /* Set margin */
+} 
 
+/* Styles for .forgot-password within the forgot form */
 .forgot-form .forgot-password {
-color: #4D4141;
-font-weight: 700px;
-cursor: pointer;
-font-size: 14px;
-text-decoration: underline;
+color: #4D4141; /* Set the text color */
+font-weight: 700px; /* Set the font weight */
+cursor: pointer; /* Set cursor style */
+font-size: 14px; /* Set the font size */
+text-decoration: underline; /* Add underline */
 }
 
+/* Styles for .existing-account within the forgot form */
 .forgot-form .existing-account {
 color: #4D4141;
 font-weight: 700px;
@@ -416,164 +469,166 @@ font-size: 14px;
 text-decoration: underline;
 }
 
-.forgot-form .forgot-password:hover {
-color: #0056b3;
-}
-
-.forgot-form .existing-account:hover {
-  color: #0056b3;
-  }
+/* Styles for .forgot-div */
 
 .forgot-div {
 align-items: center;
 justify-content: center;
 }
 
+/* Styles for placeholder text alignment */
 input::placeholder{
-  text-align: left;
+  text-align: left; /* Align placeholder text to the left *
 }
 
+  /* Styles for .group_input */
 .group_input  {
-  width: 400px;
-  display: flex;
-  flex-direction: row;
-  margin-top: 20px;
+  width: 400px; /* Set the width */
+  display: flex; /* Use flexbox */
+  flex-direction: row; /* Arrange elements in a row */
+  margin-top: 20px; /* Add top margin */
 
 }
 
+  /* Styles for select element inside .group_input */
 .group_input select {
-  width:  6rem;
-  height: 3rem;
-  margin-bottom: px;
-  border-radius: 5px;
+  width:  6rem; /* Set the width */
+  height: 3rem; /* Set the height */
+  margin-bottom: px; /* Adjust margin bottom as needed */
+  border-radius: 5px; /* Apply border radius */
   height: 45px;
 }
 
-/* Email and Code Verifictaion */
-
-/* Updated styles for the EmailForm Component */
-
+ /* Styles for .email-forms-container */
 .email-forms-container {
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; /* Center align items vertically */
-  margin-top: 50px;
-  
+  position: relative; /* Ensure relative positioning */
+  width: 100%; /* Occupy full width */
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  flex-direction: column; /* Arrange items in a column */
+  margin-top: 50px;  /* Adjust top margin as needed */b
+
 }
 
+  /* Styles for .email-sign-in-form */
 .email-sign-in-form {
-  width: 600px;
-  margin: 0 auto;
-  background-color: #BCE8B1;
-  padding: 100px;
-  border-radius: 15px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  font-style: bold;
+  width: 600px; /* Set width */
+  margin: 0 auto; /* Center horizontally */
+  background-color: #BCE8B1; /* Background color */
+  padding: 100px; /* Padding */
+  border-radius: 15px; /* Border radius */
+  text-align: center; /* Center text */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Arrange items in a column */
+  font-style: bold; /* Set font style */
 }
 
+  /* Styles for .email-title */
 .email-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color:black;
-  text-align: center;
+  font-size: 24px; /* Font size */
+  font-weight: bold; /* Font weight */
+  margin-bottom: 20px; /* Bottom margin */
+  color:black; /* Text color */
+  text-align: center; /* Center text */
 }
 
+  /* Styles for .email-sign-in-form p */
 .email-sign-in-form p {
-  margin: 10px 0;
-  align-items: center;
+  margin: 10px 0; /* Margin */
+  align-items: center; /* Align items */
 }
 
+  /* Styles for .email-input-field */
 .email-input-field {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-items: center;
-  width: 400px;
-  height: 30px;
-  margin-top: 20px;
+  display: flex; /* Display as flex */
+  flex-direction: column; /* Flex direction */
+  align-items: center; /* Align items */
+  width: 400px; /* Width */
+  height: 30px; /* Height */
+  margin-top: 20px; /* Margin top */
 }
 
-
-
+  /* Styles for .email-input-field input */
 .email-input-field input {
-  width: 300px;
-  margin-left:10px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-  text-align: center;
+  width: 300px; /* Width */
+  margin-left:10px; /* Margin left */
+  padding: 10px; /* Padding */
+  border: 1px solid #ccc; /* Border */
+  border-radius: 5px; /* Border radius */
+  box-sizing: border-box; /* Box sizing */
+  text-align: left; /* Text align */
+
 }
 
+  /* Styles for .email-button */
 .email-button {
-  padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    color: #ffffff;
-    border-radius: 100px;
-    background-color: #126912;
-    border: 1px solid #126912;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);
-    width: 110px;
-    margin-left: 250px;
-    
-    
+
+  padding: 10px 20px; /* Padding */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Cursor */
+    color: #ffffff; /* Text color */
+    border-radius: 100px; /* Border radius */
+    background-color: #126912;  /* Background color */
+    border: 1px solid #126912; /* Border */
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5); /* Box shadow */
+    width: 110px; /* Width */
+    margin-left: 250px; /* Margin left */
 }
-.email-button:hover {
-  background-color: gray
-}
+
+  /* Styles for .email-panels-container */
 
 .email-panels-container {
-  display: flex;
-  position: relative;
-  width: 100%;
+  display: flex; /* Flex display */
+  position: relative; /* Position */
+  width: 100%; /* Full width */
   flex-direction: column; /* Stack the panels vertically */
   align-items: center; /* Center align panels */
 }
 
+  /* Styles for .email-panel */
+
 .email-panel {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-  color: #fff;
+  position: relative; /* Position */
+  display: flex; /* Flex display */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center align items horizontally */
+  justify-content: center; /* Center align items vertically */
+  text-align: center; /* Text alignment */
+  padding: 20px; /* Padding */
+  color: #fff; /* Text color */
   margin-top: 20px; /* Add space between panels */
 }
 
-.Profile-picture {
-  width: 200px;
+
+  /* Styles for .email-image */
+.email-image {
+  width: 100%; /* Full width */
+  max-width: 400px; /* Adjust the image max-width as needed */
+  height: auto;  /* Maintain aspect ratio */
 }
 
-.email-image {
-  width: 100%;
-  max-width: 400px; /* Adjust the image max-width as needed */
-  height: auto;
-}
+  /* Styles for .email-center-text */
 
 .email-center-text {
-  text-align: center;
+  text-align: center; /* Center align text */
   margin-top: 10px; /* Add space between text and link */
 }
 
+  /* Styles for .verification-forms-container */
+
 .verification-forms-container {
-  position: relative;
+  position: relative; 
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column; /* Center align items vertically */
-  margin-top: 50px;
+  margin-top: 50px; /* Add margin on top */
   
 }
+
+  /* Styles for .verification-sign-in-form */
 
 .verification-sign-in-form {
   width: 600px;
@@ -582,23 +637,27 @@ input::placeholder{
   padding: 100px;
   border-radius: 15px;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Stack the content vertically */
 }
+  /* Styles for .verification-title */
 
 .verification-title {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 20px;
-  color:black;
+  color:black; /* Text color */
   text-align: center;
 }
 
+  /* Styles for .verification-sign-in-form p */
 .verification-sign-in-form p {
   margin: 10px 0;
-  text-align: center;
+  text-align: center; /* Center align text */
 }
 
+  /* Styles for .verification-input-field */
 .verification-input-field {
+   /* Display the input field and its label in a column */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -606,26 +665,28 @@ input::placeholder{
   align-items: center;
 }
 
+  /* Styles for input elements inside .verification-input-field */
 .verification-input-field input {
-  width: 300px;
-  margin-left:10px;
-  padding: 10px;
-  border: 1px solid #ccc;
+  width: 300px; /* Set width of the input */
+  margin-left:10px; /* Add left margin for spacing */
+  padding: 10px; /* Add padding for inner spacing */
+  border: 1px solid #ccc; /* Add border and border radius for visual appearance */
   border-radius: 5px;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Ensure box sizing includes padding and border */
 }
 
+  /* Styles for the verification button */
 .verification-button {
-    font-size: 16px;
-    cursor: pointer;
-    color: #ffffff;
-    border-radius: 100px;
-    background-color: #126912;
-    border: 1px solid #126912;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);
-    width: 110px;
-    margin-left: 20px;
-  text-align: center;
+    font-size: 16px; /* Set font size */
+    cursor: pointer; /* Set cursor to pointer for interaction */
+    color: #ffffff; /* Set text color */
+    border-radius: 100px;  /* Add border radius for rounded corners */
+    background-color: #126912; /* Set background color */
+    border: 1px solid #126912;  /* Add border */
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);  /* Add box shadow for visual effect */
+    width: 110px;  /* Set width of the button */
+    margin-left: 20px;/* Add left margin for spacing */
+  text-align: center;  /* Align text to center */
     
 }
 .verification-button:hover {
@@ -633,365 +694,403 @@ input::placeholder{
 
 }
 
+  /* Styles for the verification panels container */
 .verification-panels-container {
-  display: flex;
-  position: relative;
-  width: 100%;
+  display: flex;  /* Display panels in a flex container */
+  position: relative; /* Set position to relative */
+  width: 100%; /* Set width to 100% */
   flex-direction: column; /* Stack the panels vertically */
   align-items: center; /* Center align panels */
 }
 
+  /* Styles for the verification panel */
 .verification-panel {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-  color: #fff;
+  position: relative; * Set position to relative */
+  display: flex; /* Display panels in a flex container */
+  flex-direction: column; /* Stack the content vertically */
+  align-items: center; /* Center align content horizontally */
+  justify-content: center; /* Center align content vertically */
+  text-align: center; /* Center align text */
+  padding: 20px; /* Add padding around the content */
+  color: #fff; /* Set text color to white */
   margin-top: 20px; /* Add space between panels */
 }
 
-.home-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-}
-
+/* Styles for the verification image */  
 
 .verification-image {
-  width: 100%;
+  width: 100%; /* Set width to 100% of its container */
   max-width: 400px; /* Adjust the image max-width as needed */
-  height: auto;
+  height: auto;/* Automatically adjust height to maintain aspect ratio */
 }
 
+  /* Center-align text and add margin to the top */
 .verification-center-text {
   text-align: center;
   margin-top: 10px; /* Add space between text and link */
 }
 
+  /* Styling for the resend code and not received code links */
 .verification-resend-code,
 .verification-not-received-code {
   color: #126912; /* Dark Green */
-  text-decoration: underline;
-  cursor: pointer;
+  text-decoration: underline; /* Underline the text */
+  cursor: pointer; /* Set cursor to pointer on hover */
 }
 
 .verification-resend-code:hover,
 .verification-not-received-code:hover {
-  color: #ccc;
-  text-decoration: underline;
+  color: #ccc; /* Change text color to light gray */
+  text-decoration: underline; /* Underline the text */
   background-color: transparent; /* Remove the background color */
 }
-/* SharedStyles.css */
+
+  /* Styling for the navbar in the Prof1 component */
 .Prof1-navbar {
-  background-color: #D9FFCF;
-  padding: 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background-color: #D9FFCF; /* Set background color */
+  padding: 15px; /* Add padding */
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space items evenly along the main axis */
+  align-items: center; /* Center items along the cross axis */
 }
 
+  /* Styling for the logo in the Prof1 navbar */
 .Prof1-nav-logo {
-  color: #0e3b03;
-  font-size: 20px;
+  color: #0e3b03; /* Set text color */
+  font-size: 20px; /* Set font size */
 }
 
+  /* Styling for the links in the Prof1 navbar */
 .Prof1-nav-links {
-  flex-grow: 1;
+  flex-grow: 1; /* Allow the links to grow to fill the available space */
 }
 
+  /* Styling for the list in the Prof1 navbar */
 .Prof1-nav-list {
-  list-style: none;
-  display: flex;
+  list-style: none; /* Remove default list styles */
+  display: flex; /* Display items as a flex container */
   justify-content: flex-start; /* Align items to the left */
 }
 
+  /* Styling for the items and links in the Prof1 navbar list */
 .Prof1-nav-list li {
-  margin-right: 20px;
+  margin-right: 20px; /* Add right margin between list items */
 }
 
 .Prof1-nav-list a {
-  text-decoration: none;
-  color: #0e3b03;
-  font-size: 16px;
+  text-decoration: none; /* Remove underline from links */
+  color: #0e3b03; /* Set link color */
+  font-size: 16px; /* Set font size for links */
 }
 
+  /* Styling for the Prof1 wrapper */
 .Prof1-wrapper {
-  display: flex;
-  background-color: #BCE8B1;
-  box-shadow: 0 1px 20px 0 rgba(14, 59, 3, 0.1);
-  margin: 20px;
-  border-radius: 10px;
-  position: relative;
+  display: flex; /* Make it a flex container */
+  background-color: #BCE8B1; /* Set background color */
+  box-shadow: 0 1px 20px 0 rgba(14, 59, 3, 0.1); /* Add shadow */
+  margin: 20px; /* Add margin */
+  border-radius: 10px;  /* Add border radius */
+  position: relative; /* Set position to relative */
 }
 
+  /* Styling for the Prof1 left section */
 .Prof1-left {
-  width: 35%;
-  padding: 30px 25px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  width: 35%; /* Set width */
+  padding: 30px 25px; /* Add padding */
+  border-top-left-radius: 10px; /* Add border radius */
+  border-bottom-left-radius: 10px; /* Add border radius */
+  text-align: center; /* Center-align text */
+  display: flex; /* Make it a flex container */
+  flex-direction: column;  /* Stack items vertically */
+  justify-content: space-between; /* Distribute space evenly between items */
  align-items: center; /* Center-align content horizontally */
   justify-content: center; /* Center-align content vertically */
 }
 
+  /* Styling for the image inside the Prof1 left section */
 .Prof1-left img {
-  border-radius: 5px;
-  margin-bottom: 10px;
+  border-radius: 5px; /* Add border radius */
+  margin-bottom: 10px; /* Add margin to the bottom */
 }
 
+  /* Styling for h4 elements inside the Prof1 left section */
 .Prof1-left h4 {
-  margin-bottom: 10px;
+  margin-bottom: 10px; /* Add margin to the bottom */
+
 }
 
+  /* Styling for p elements inside the Prof1 left section */
 .Prof1-left p {
-  font-size: 12px;
+  font-size: 12px; /* Set font size */
 }
 
+  /* Styling for the edit button */
 .Prof1-editButton {
-    background-color: #0e3b03;
-    color: #fff;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    transition: background-color 0.3s ease;
+    background-color: #0e3b03;  /* Background color */
+    color: #fff; /* Text color */
+    border: none; /* Remove border */
+    padding: 8px 16px; /* Padding */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Cursor style */
+    font-size: 14px; /* Font size */
+    position: absolute; /* Positioning */
+    bottom: 10px; /* Distance from bottom */
+    right: 10px; /* Distance from right */
+    transition: background-color 0.3s ease; /* Transition effect */
   }
 
-.Prof1-editButton:hover {
-  background-color: #999
-}
+  /* Styling for the right section */
 
 .Prof1-right {
-  width: 65%;
-  padding: 30px 25px;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+  width: 65%; /* Set width */
+  padding: 30px 25px; /* Padding */
+  border-top-right-radius: 10px; /* Rounded top-right corner */
+  border-bottom-right-radius: 10px; /* Rounded bottom-right corner */
 }
 
+  /* Styling for the headings in the info and projects sections */
 .Prof1-info h3,
 .Prof1-projects h3 {
-  margin-bottom: 15px;
-  padding-bottom: 5px;
-  border-bottom: 1px solid #0e3b03;
-  color: #0e3b03;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  font-weight: 700;
+
+  margin-bottom: 15px; /* Margin bottom */
+  padding-bottom: 5px;   /* Padding bottom */
+  border-bottom: 1px solid #0e3b03; /* Bottom border */
+  color: #0e3b03; /* Text color */
+  text-transform: uppercase; /* Uppercase text */
+  letter-spacing: 5px; /* Letter spacing */
+
 }
+
+/* Styling for the data container in the info section */  
 .Prof1-info_data {
-  display: flex;
-  flex-direction: column;
+  display: flex; /* Flex display */
+  flex-direction: column;  /* Column direction */
 }
 
+  /* Styling for the rows in the info section */
 .Prof1-info_row {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
+  display: flex;  /* Flex display */
+  justify-content: space-between;  /* Space between items */
+  margin-bottom: 10px; /* Margin bottom */
+
 }
 
+  /* Styling for the headers within the info rows */
 .Prof1-info_row h4 {
-  margin-right: 10px;
-  font-weight: bold;
+  margin-right: 10px; /* Right margin */
+  font-weight: bold;  /* Bold font weight */
 }
-
-
-.Prof1-info h4 {
-  color: #0e3b03;
-  font-weight: 700;
-}
+  /* Styling for the headers within the data section */
 
 .Prof1-data h4 {
-  color: #0e3b03;
-  margin-bottom: 5px;
+  color: #0e3b03; /* Dark green color */
+  margin-bottom: 5px;/* Bottom margin */
 }
 
+  /* Styling for paragraphs within the data section */
 .Prof1-data p {
-  font-size: 13px;
-  margin-bottom: 10px;
-  color: #919aa3;
-}
-.Prof1-right {
-  width: 65%;
-  padding: 30px 25px;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+  font-size: 13px; /* Font size */
+  margin-bottom: 10px; /* Bottom margin */
+  color: #919aa3; /* Text color */
 }
 
+  /* Additional styling for the right section */
+.Prof1-right {
+  width: 65%; /* Width of the right section */
+  padding: 30px 25px; /* Padding */
+  border-top-right-radius: 10px; /* Top border radius */
+  border-bottom-right-radius: 10px; /* Bottom border radius */
+}
+
+  /* Styling for the projects section */
 .Prof1-projects {
   margin-bottom: 40px; /* Add more space under the "Earned badges" heading */
 }
 
+  
+/* Styling for the projects data */
 .Prof1-projects_data {
   margin-top: 20px; /* Add space above the projects data */
 }
 
 
+  /* Navbar styling for Prof2 */
 .Prof2-navbar {
-  background-color: #D9FFCF;
-  padding: 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background-color: #D9FFCF; /* Background color */
+  padding: 15px; /* Padding around the content */
+  display: flex;  /* Make the navbar a flex container */
+  justify-content: space-between; /* Align items horizontally with space between them */
+  align-items: center; /* Align items vertically */
 }
 
+  /* Styling for the logo and links in Prof2 navbar */
 .Prof2-nav-logo {
-  color: #0e3b03;
-  font-size: 20px;
+  color: #0e3b03; /* Text color for the logo */
+  font-size: 20px; /* Font size for the logo */
 }
+
 
 .Prof2-nav-links {
-  flex-grow: 1;
+  flex-grow: 1; /* Allow the links to grow and occupy remaining space */
 }
 
+  /* Styling for the list of links in Prof2 navbar */
 .Prof2-nav-list {
-  list-style: none;
-  display: flex;
+  list-style: none; /* Remove bullet points */
+  display: flex; /* Display links in a row */
   justify-content: flex-start; /* Align items to the left */
 }
 
+  /* Styling for each item in the list of links in Prof2 navbar */
 .Prof2-nav-list li {
-  margin-right: 20px;
+  margin-right: 20px; /* Add space between each item */
 }
 
+  /* Styling for each link in the list of links in Prof2 navbar */
 .Prof2-nav-list a {
-  text-decoration: none;
-  color: #0e3b03;
-  font-size: 16px;
+  text-decoration: none;  /* Remove default underline */
+  color: #0e3b03;  /* Set text color */
+  font-size: 16px;  /* Set font size */
 }
 
+  /* Styling for the wrapper element of Prof2 component */
 .Prof2-wrapper {
-  display: flex;
-  background-color: #BCE8B1;
-  box-shadow: 0 11px 20px 0 rgba(14, 59, 3, 0.1);
-  margin: 20px;
-  border-radius: 10px;
+  display: flex; /* Display as flex container */
+  background-color: #BCE8B1;  /* Set background color */
+  box-shadow: 0 11px 20px 0 rgba(14, 59, 3, 0.1); /* Apply box shadow */
+  margin: 20px; /* Set margin */
+  border-radius: 10px; /* Apply border radius */
 }
 
+  /* Styling for the left section of Prof2 component */
 .Prof2-left {
-  width: 35%;
-  padding: 30px 25px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 35%; /* Set width */
+  padding: 30px 25px; /* Apply padding */
+  border-top-left-radius: 10px; /* Apply border radius to the top left corner */
+  border-bottom-left-radius: 10px; /* Apply border radius to the bottom left corner */
+  text-align: center; /* Center-align text */
+  display: flex; /* Display as flex container */
+  flex-direction: column; /* Set flex direction */
+  align-items: center; /* Center-align items horizontally */
 }
 
+/* Styling for images, headings, and paragraphs in the left section of Prof2 component */  
 .Prof2-left img {
-  border-radius: 5px;
-  margin-bottom: 10px;
+  border-radius: 5px; /* Apply border radius to images */
+  margin-bottom: 10px; /* Add bottom margin to images */
 }
 
 .Prof2-left h4 {
-  margin-bottom: 10px;
+  margin-bottom: 10px; /* Add bottom margin to headings */
 }
 
 .Prof2-left p {
-  font-size: 12px;
+  font-size: 12px; /* Set font size for paragraphs */
 }
 
+  /* Styling for the edit button in the Prof2 component */
 .Prof2-editButton {
-  background-color: #0e3b03;
-  color: #fff;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 14px;
-  margin-top: 10px;
-  transition: background-color 0.3s ease;
+  background-color: #0e3b03;  /* Background color */
+  color: #fff;  /* Text color */
+  border: none; /* Remove border */
+  padding: 8px 16px;  /* Padding */
+  border-radius: 5px; /* Border radius */
+  cursor: pointer; /* Cursor style */
+  font-size: 14px; /* Font size */
+  margin-top: 10px; /* Top margin */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
 }
 
+  /* Styling for the hover effect on the edit button in the Prof2 component */
 .Prof2-editButton:hover {
-  background-color: #145304;
+  background-color: #145304; /* Change background color on hover */
+
 }
 
 .Prof2-right {
-  width: 65%;
-  padding: 30px 25px;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+  width: 65%; /* Set width */
+  padding: 30px 25px; /* Padding */
+  border-top-right-radius: 10px; /* Border radius for top right corner */
+  border-bottom-right-radius: 10px; /* Border radius for bottom right corner */
 }
 
+  /* Styling for the heading in the Prof2 component */
 .Prof2-info h3,
 .Prof2-projects h3 {
-  margin-bottom: 15px;
-  padding-bottom: 5px;
-  border-bottom: 1px solid #0e3b03;
-  color: #0e3b03;
-  text-transform: uppercase;
-  letter-spacing: 5px;
+  margin-bottom: 15px; /* Margin at the bottom */
+  padding-bottom: 5px; /* Padding at the bottom */
+  border-bottom: 1px solid #0e3b03; /* Border at the bottom */
+  color: #0e3b03; /* Text color */
+  text-transform: uppercase; /* Transform text to uppercase */
+  letter-spacing: 5px; /* Letter spacing */
 }
 
+  /* Styling for the container of Prof2 info data */
 .Prof2-info_data {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 15px;
+  display: flex; /* Display as flexbox */
+  flex-wrap: wrap;  /* Allow items to wrap */
+  justify-content: space-between; /* Space between items */
+  margin: 15px; /* Margin around the container */
   
 }
+
+  /* Styling for the input fields in Prof2 data */
 .Prof2-data input {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #0e3b03;
-  border-radius: 5px;
-  box-sizing: border-box;
+  width: 100%; /* Take up full width */
+  padding: 8px; /* Padding for input */
+  border: 1px solid #0e3b03; /* Border color */
+  border-radius: 5px; /* Rounded corners */
+  box-sizing: border-box; /* Include padding and border in width */
   margin-bottom: 10px; /* Add margin to the bottom */
 }
 
+  /* Styling for the Prof2 data section */
 .Prof2-data {
-  width: 45%;
-  margin-bottom: 15px;
-}
+  width: 45%; /* Set width */
+  margin-bottom: 15px; /* Add margin at the bottom */
+} 
 
+  /* Styling for the labels in Prof2 data */
 .Prof2-data label {
-  color: #0e3b03;
-  display: block;
-  margin-bottom: 5px;
+  color: #0e3b03; /* Label text color */
+  display: block;  /* Display as block to ensure each label is on its own line */
+  margin-bottom: 5px; /* Add margin at the bottom */
 }
 
+  /* Styling for the input fields in Prof2 data */
 .Prof2-data input {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #0e3b03;
-  border-radius: 5px;
-  box-sizing: border-box;
+  width: 100%; /* Set input width to 100% */
+  padding: 8px;  /* Add padding */
+  border: 1px solid #0e3b03;  /* Border color */
+  border-radius: 5px;  /* Border radius */
+  box-sizing: border-box;  /* Ensure padding and border are included in the width */
 }
 
+  /* Styling for the placeholder text in Prof2 data */
 .Prof2-data input::placeholder {
-  color: #919aa3;
+  color: #919aa3; /* Placeholder text color */
 }
 
+  /* Styling for the h4 elements in Prof2 data */
 .Prof2-data h4 {
-  color: #0e3b03;
-  margin-bottom: 5px;
+  color: #0e3b03; /* Heading color */
+  margin-bottom: 5px; /* Add margin to the bottom */
 }
 
+  /* Styling for the p elements in Prof2 data */
 .Prof2-data p {
-  font-size: 13px;
-  margin-bottom: 10px;
-  color: #919aa3;
+  font-size: 13px; /* Font size */
+  margin-bottom: 10px; /* Add margin to the bottom */
+  color: #919aa3; /* Text color */
 }
-/*remember me button*/
+  
+/* Styling for the remember me button */
 .remember-me {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding-left: 90px;
-  gap: 10px;
+  display: flex; /* Display as flex container */
+  align-items: center; /* Align items vertically */
+  justify-content: flex-start; /* Align items to the start */
+  padding-left: 90px; /* Add left padding */
+  gap: 10px;  /* Add gap between items */
 }
 
 .remember-me .rememberMe_input {
@@ -1009,27 +1108,29 @@ input::placeholder{
   column-gap: 10px;
 }
 
+  /* Styling for the Cancel button */
 .cancel-button {
   background-color: #4caf50; /* Set background color for Cancel button */
   color: #fff; /* Set text color for Cancel button */
-  border: none;
-  padding: 8px 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 14px;
+  border: none; /* Remove border */
+  padding: 8px 16px; /* Padding for the button */
+  border-radius: 5px; /* Border radius */
+  cursor: pointer; /* Cursor style */
+  font-size: 14px; /* Font size */
   margin-right: 10px; /* Adjust the margin as needed */
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease; /* Transition effect for background color */
 }
 
+  /* Styling for the Submit button */
 .submit-button{
   background-color: #4caf50; /* Set background color for Update button */
   color: #fff; /* Set text color for Update button */
-  border: none;
-  padding: 8px 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background-color 0.3s ease;
+  border: none; /* Remove border */
+  padding: 8px 16px; /* Padding for the button */
+  border-radius: 5px; /* Border radius */
+  cursor: pointer; /* Cursor style */
+  font-size: 14px; /* Font size */
+  transition: background-color 0.3s ease; /* Transition effect for background color */
   
 }
 
@@ -1040,7 +1141,7 @@ input::placeholder{
 /*Prof1 edit and change password buttons */
 
 .Prof1-buttons {
-  display: flex;
+  display: flex;  /* Display buttons in a flex container */
   justify-content: flex-end; /* Align buttons to the right */
   margin-top: 10px; /* Adjust the top margin as needed */
   margin-right: 10px; /* Adjust the right margin as needed */
@@ -1227,7 +1328,8 @@ input::placeholder{
   background-color: gray;
 }
 
-.save-button
+.save-button,
+.submit-button
 .cancel-button{
   background-color: #126912;
   color:#F6F6F6;

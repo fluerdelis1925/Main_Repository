@@ -192,13 +192,17 @@ const CourseOverviewById = ({ courseTitle }) => {
                       {courses.map((course) => {
                         const { chapter, idx, course_id } = course;
                         // Initialize a count for chapters within this course
-                        let chapterCount = 0;
+                        {
+                          /* let chapterCount = 0; */
+                        }
                         return (
                           <div key={idx}>
                             {chapter.map((chap, idx) => {
                               const { chapter_id, chapter_title } = chap;
                               // Increment the chapter count for each chapter
-                              chapterCount++;
+                              {
+                                /* chapterCount++; */
+                              }
                               return (
                                 <div
                                   key={idx}
@@ -209,9 +213,9 @@ const CourseOverviewById = ({ courseTitle }) => {
                                     <Link
                                       to={`/teambtopicpage/${chapter_id}`}
                                       className="2xl:rounded-[20px] w-full lg:flex lg:items-center lg:font-medium lg:text-[1rem] 2xl:text-[24px] bg-[#126912] py-1 text-center text-[.8rem]  lg:p-5 text-white lg:h-[50px] lg:rounded-[1rem]  ">
-                                      <p className="text-shadow">
+                                      {/* <p className="text-shadow">
                                         CHAPTER {chapterCount}:
-                                      </p>
+                                      </p> */}
                                       <p className="pl-2 lg:font-medium text-shadow">
                                         {chapter_title}
                                       </p>
@@ -229,9 +233,10 @@ const CourseOverviewById = ({ courseTitle }) => {
 
                                         <div
                                           className="text-[1.3rem] 2xl:text-[2rem]  text-white"
-                                          onClick={() =>
-                                            handleDeleteChapter(chapter_id)
-                                          }>
+                                          // onClick={() =>
+                                          //   handleDeleteChapter(chapter_id)
+                                          // }
+                                          >
                                           <RiDeleteBinLine />
                                         </div>
                                       </div>
