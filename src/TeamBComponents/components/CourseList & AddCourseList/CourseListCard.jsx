@@ -249,25 +249,25 @@ const CourseListCard = () => {
               </Stack>
             )}
             {/* onClick={() => setShowCreateCourse((prev) => !prev)} */}
-            
-            <div className=" h-[8vh] flex w-[100%] m-auto lg:w-[50%]   items-center justify-center">
+            <div className="w-[100%]">
+              <div className=" h-[8vh] flex w-[100%] m-auto lg:w-[80%]   items-center justify-center">
                 <div
-                  className="bg-[#BCE8B1] w-[10%] cursor-pointer  flex items-center justify-center  rounded-l-sm lg:rounded-l-md h-10"
+                  className="bg-[#BCE8B1] w-[10%] cursor-pointer  flex items-center justify-center h-[8vh]  rounded-l-sm lg:rounded-l-md"
                   onClick={() => setShowCreateCourse((prev) => !prev)}>
                   <span>
                     <IoAdd className="lg:text-[2rem] text-white" />
                   </span>
                 </div>
                 <div
-                  className="bg-[#126912] text-white lg:font-bold cursor-pointer h-10
-                  w-[40%] md:w-[40%] lg:w-[30%]  flex items-center justify-center rounded-r-sm  lg:rounded-r-md"
+                  className="bg-[#126912] text-white lg:font-bold h-[8vh]  cursor-pointer
+                  w-[60%] md:w-[40%] lg:w-[30%]  flex items-center justify-center rounded-r-sm  lg:rounded-r-md"
                   onClick={() => setShowCreateCourse((prev) => !prev)}>
                   <span className=" TeamB_text-shadow">
                     Add New Course
                   </span>
                 </div>
               </div>
-            
+            </div>
             <div className="absolute ">
               <div className="lg:w-[1080px] ">
                 {showCreateCourse && <CopyofCreateNewCourse />}

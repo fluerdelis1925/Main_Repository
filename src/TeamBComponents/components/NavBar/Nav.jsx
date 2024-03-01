@@ -1,7 +1,7 @@
 // 1/31/2024 from junite, to ced. TODO
 //Only show
 
-import React, { useContext } from "react"; // Importing React and useContext hook
+import React, { useContext, useEffect, useState} from "react"; // Importing React and useContext hook
 import logo from "../../../assets/TeamBassests/companyLogo.png"; // Importing logo image
 
 //import react icon
@@ -19,8 +19,27 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 //Importing NavBarContext from context
 import { NavBarContext } from "../context/NavBarContext";
 import { ProfileContext } from "../context/ProfileContext";
+import axios from "axios";
 //Nav functional component
+
 const Nav = () => {
+  const [instructors, setInstructors] = useState({
+    firstName: "",
+    lastName: "",
+    phoneNumber: "",
+    email: "",
+  });
+  // const {id} = useParams(); for by id
+  useEffect(() => {
+    const loadInstructors = async () => {
+      // const result = await axios.get(`http://localhost:8080/api/v1/auth/users/${id}`); by id
+      const result = await axios.get("http://localhost:8080/api/v1/auth/users");
+      setInstructors(result.data);
+    };
+
+    loadInstructors();
+  }, []);
+
   //Destructuring values from NavBarContext
   const {
     header,
@@ -42,10 +61,13 @@ const Nav = () => {
     setForumShow,
   } = useContext(NavBarContext);
 
-  const { users, file } = useContext(ProfileContext);
+  
+  const { users, file } =
+    useContext(ProfileContext);
 
-  const { firstName, lastName, email } = users;
+  const { firstName, lastName, email } = instructors;
 
+  console.log(instructors);
   return (
     <>
       {/* Navigation bar */}
@@ -55,7 +77,8 @@ const Nav = () => {
             header
               ? "relative flex justify-between items-center lg:justify-normal bg-[#D9FFCF] h-[69px] transition-all "
               : "relative flex justify-between items-center lg:justify-normal bg-transparent h-[69px] transition-all "
-          }>
+          }
+        >
           {/* Link to Dashboard*/}
           <Link to="/teambdashboard" className="">
             <img
@@ -77,7 +100,8 @@ const Nav = () => {
                   dashBoardShow
                     ? "font-semibold text-[#116211] text-center p-1 TeamB_text-shadow   transition-all"
                     : "font-bold TeamB_text-shadow   p-1  hover:text-[#116211] transition-all hover:bg-opacity-[50%] hover:font-semibold "
-                }>
+                }
+              >
                 Dashboard
               </ul>
             </Link>
@@ -88,7 +112,8 @@ const Nav = () => {
                   courseListShow
                     ? "font-semibold text-[#116211] text-center p-1 TeamB_text-shadow   transition-all"
                     : "font-bold TeamB_text-shadow   p-1  hover:text-[#116211] hover:bg-opacity-[50%] hover:font-semibold transition-all"
-                }>
+                }
+              >
                 Course List
               </ul>
             </Link>
@@ -99,7 +124,8 @@ const Nav = () => {
                   forumShow
                     ? "font-semibold text-[#116211] text-center p-1 TeamB_text-shadow   transition-all"
                     : "font-bold TeamB_text-shadow   p-1  hover:text-[#116211] transition-all hover:bg-opacity-[50%] hover:font-semibold "
-                }>
+                }
+              >
                 Forums
               </ul>
             </Link>
@@ -110,7 +136,8 @@ const Nav = () => {
               <div className="flex w-[250px]">
                 <div
                   onClick={() => setShow((prev) => !prev)}
-                  className="w-[250px] TeamB_text-shadow gap-x-4 py-2 px-4 bg-[#bce8b1] rounded-[.5rem] shadow-lg flex justify-center items-center lg:hidden">
+                  className="w-[250px] TeamB_text-shadow gap-x-4 py-2 px-4 bg-[#bce8b1] rounded-[.5rem] shadow-lg flex justify-center items-center lg:hidden"
+                >
                   <img
                     className="h-[40px] w-[40px] rounded-[50%] border-2 border-green-800"
                     src={file}
@@ -147,18 +174,19 @@ const Nav = () => {
               />
               <p
                 onClick={() => setShowDropDown((prev) => !prev)}
-                className="text-[15px] ml-2">
+                className="text-[15px] ml-2"
+              >
                 Hi,
               </p>
               <span
                 className="w-[50px] line-clamp-1"
-                onClick={() =>
-                  setShowDropDown((prev) => !prev)
-                }>{` ${firstName}!`}</span>
+                onClick={() => setShowDropDown((prev) => !prev)}
+              >{` ${firstName}!`}</span>
 
               <span
                 onClick={() => setShowDropDown((prev) => !prev)}
-                className="cursor-pointer">
+                className="cursor-pointer"
+              >
                 {showDropDown ? <FaChevronUp /> : <FaChevronDown />}
               </span>
               {/* Dropdown content */}
@@ -168,7 +196,8 @@ const Nav = () => {
                   <Link
                     to="/profile"
                     onClick={showProfile}
-                    className="w-full text-center ">
+                    className="w-full text-center "
+                  >
                     <p
                       className={
                         profileShow
@@ -178,7 +207,8 @@ const Nav = () => {
                           : showDropDown
                           ? " text-[#000000] rounded-md text-start p-1  hover:text-[#116211]"
                           : ""
-                      }>
+                      }
+                    >
                       <CgProfile className="text-[20px] inline-block align-start mr-3 " />
                       Profile
                     </p>
@@ -188,7 +218,8 @@ const Nav = () => {
                     to="/"
                     src="CgProfile"
                     onClick={showLogout}
-                    className="w-full text-center ">
+                    className="w-full text-center "
+                  >
                     <p
                       className={
                         logout
@@ -198,7 +229,8 @@ const Nav = () => {
                           : showDropDown
                           ? " text-red-600 rounded-md text-start p-1 bg-[#D9FFCF]  hover:text-red-500"
                           : " "
-                      }>
+                      }
+                    >
                       <MdOutlineLogout className=" text-[20px] inline-block align-middle mr-3 " />
                       Log out
                     </p>

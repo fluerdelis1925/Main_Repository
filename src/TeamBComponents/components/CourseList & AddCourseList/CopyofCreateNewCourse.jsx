@@ -52,19 +52,16 @@ const CopyofCreateNewCourse = () => {
     }
   };
 
- const handleSubmit = async (e) => {
-   try {
-     const currentDate = new Date().toISOString(); // Get current date/time
-     const updatedCourse = { ...course, course_date_created: currentDate };
-     await axios.post(
-       "http://localhost:8080/api/v1/auth/postCourses",
-       updatedCourse
-     );
-     setFormSubmitted(true);
-   } catch (error) {
-     console.error("Error submitting form:", error);
-   }
- };
+  const handleSubmit = async (e) => {
+    // Assuming your API call is successful, update the state to indicate form submission
+    try {
+      await axios.post("http://localhost:8080/api/v1/auth/postCourses", course);
+      setFormSubmitted(true);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      // Handle error if the API call fails
+    }
+  };
   console.log(course);
   //react hook for tooltip
   const [showTooltipCourseTitle, setShowTooltipCourseTitle] = useState(false);

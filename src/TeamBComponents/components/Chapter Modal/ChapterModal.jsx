@@ -1,6 +1,6 @@
-/* eslint-disable react/prop-types */ // Disables eslint rule for prop-types
+/* eslint-disable react/prop-types */
 //2/1/2024 junite, created UI Modal for course title edit, completed
-import React, { useState, useEffect } from "react"; // Importing necessary modules
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const ChapterModal = ({ chapterId, editTitle }) => {
@@ -11,7 +11,7 @@ const ChapterModal = ({ chapterId, editTitle }) => {
     chapter_title: "",
   });
 
-  const { chapter_title } = chapters; // Destructuring chapter_title from state
+  const { chapter_title } = chapters;
   // const handleInputChange = (e) => {
   //   setChapters({ ...chapters, [e.target.name]: e.target.value });
   // };
@@ -40,7 +40,7 @@ const ChapterModal = ({ chapterId, editTitle }) => {
       );
       // showModal(false);
     } catch (error) {
-      console.error("Error submitting form:", error); // Log error if API call fails
+      console.error("Error submitting form:", error);
       // Handle error if the API call fails
     }
   };
@@ -50,15 +50,15 @@ const ChapterModal = ({ chapterId, editTitle }) => {
     const result = await axios.get(
       `http://localhost:8080/api/v1/auth/chapter/${chapterId}`
     );
-    setChapters(result.data); // Set loaded chapters to state
+    setChapters(result.data);
   };
 
   const handleCancel = () => {
     // Function to handle cancellation
     // Implement your cancel logic here
-    editTitle((prev) => !prev); // Toggle editTitle state
+    editTitle((prev) => !prev); // Toggle editTitle state 
   };
-  console.log(chapter_title); // Logging chapter_title
+  console.log(chapter_title);
 
   return (
     <>

@@ -1,39 +1,37 @@
-/* eslint-disable react/prop-types */ // Disable eslint warnings for prop-types in this file
-import axios from 'axios'; // Import axios for HTTP requests
-import React, { createContext,  useState } from 'react' // Import React, createContext, and useState from 'react'
+/* eslint-disable react/prop-types */
+import axios from 'axios';
+import React, { createContext,  useState } from 'react'
 
 
-export const CourseContext = createContext(); // Create a context named CourseContext
+export const CourseContext = createContext();
 
-const CourseProvider = ({children}) => { // Define a functional component named CourseProvider receiving children as props 
+const CourseProvider = ({children}) => {
   //react state for course api
-  const [courses, setCourses] = useState([]); // Define state variable courses and setCourses function using useState hook with an initial value of an empty array
+  const [courses, setCourses] = useState([]);
 
   //chapter state
-  const [chapters, setChapters] = useState([]) // Define state variable chapters and setChapters function using useState hook with an initial value of an empty array
+  const [chapters, setChapters] = useState([])
 
   //topic state
   // const [topics, setTopics] = useState([])
 
   //hide and show create new course
-  const [showCreateCourse, setShowCreateCourse] = useState(false); // Define state variable showCreateCourse and setShowCreateCourse function using useState hook with an initial value of false
+  const [showCreateCourse, setShowCreateCourse] = useState(false);
 
-  
   return (
-    <CourseContext.Provider // Provide the context values to the components below
+    <CourseContext.Provider
       value={{
-        courses, // Provide courses state variable
-        setCourses, // Provide setCourses function
-        showCreateCourse, // Provide showCreateCourse state variable
-        setShowCreateCourse, // Provide setShowCreateCourse function
-        chapters, // Provide chapters state variable
-        setChapters, // Provide setChapters function
+        courses,
+        setCourses,
+        showCreateCourse,
+        setShowCreateCourse,
+        chapters,
+        setChapters,
      
       }}>
-      {children} {/* Render the child components */}
-    </CourseContext.Provider> // End of CourseContext.Provider
+      {children}
+    </CourseContext.Provider>
   );
 }
 
-export default CourseProvider //Exporting CourseProvider Component 
-//comments by: Judes 02-29-24
+export default CourseProvider

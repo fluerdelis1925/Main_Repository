@@ -1,21 +1,20 @@
-/* eslint-disable react/prop-types */ // Disables prop-types linting for this file
-import { createContext } from "react"; // Imports createContext from React
+/* eslint-disable react/prop-types */
+import { createContext } from "react";
 
-export const AllPageContext = createContext() // Creates a context named AllPageContext 
+export const AllPageContext = createContext()
 
-const AllPageProvider = ({children}) => { // Defines a component named AllPageProvider with children as props 
+const AllPageProvider = ({children}) => {
     return (
-      <AllPageContext.Provider // Provides the context values to its children
+      <AllPageContext.Provider
         value={{
-          showPerInfo, // Value for showPerInfo context
-          setPerInfo, // Value for setPerInfo context
-          showAccInfo, // Value for showAccInfo context
-          setShowAccInfo, // Value for setShowAccInfo context
+          showPerInfo,
+          setPerInfo,
+          showAccInfo,
+          setShowAccInfo,
         }}>
-        {children} {/* Renders its children */}
+        {children}
       </AllPageContext.Provider>
     );
 }
 
-export default AllPageProvider // Exporting AllPageProvider Component
-//comments by: Judes 02-29-24
+export default AllPageProvider

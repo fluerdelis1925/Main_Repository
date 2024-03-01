@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"; // Importing Link component from react-
 import { ProfileContext } from "../context/ProfileContext";
 import { useContext } from "react";
 
-const AccDetails = ({ email, userName }) => {
+const AccDetails = ({ email, user_name }) => {
   return (
     <>
       {/* 1/11/2024 Created Account Details UI Ouline */}
@@ -31,7 +31,7 @@ const AccDetails = ({ email, userName }) => {
               {" "}
               {/* Paragraph element */}
               <span className="lg:text-[1.3rem] TeamB_text-shadow">
-                {userName}
+                {user_name}
               </span>{" "}
               {/* Span element */}
             </p>

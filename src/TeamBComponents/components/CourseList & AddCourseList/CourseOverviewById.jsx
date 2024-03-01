@@ -71,6 +71,15 @@ const CourseOverviewById = ({ courseTitle }) => {
   const [deleteModalVisible, setDeleteModalVisible] = useState(false);
   const [selectedChapterId, setSelectedChapterId] = useState(null);
 
+  const handleDeleteChapter = async (chapterId) => {
+    deleteAllTopics();
+    const deleteChapter = await axios.delete(
+      `http://localhost:8080/api/v1/auth/chapter/${chapterId}`
+    );
+    setLoadByChapter(deleteChapter.data);
+  };
+  
+
   // console.log(loadByChapter);
 
   const [searchQuery, setSearchQuery] = useState("");
@@ -113,6 +122,7 @@ const CourseOverviewById = ({ courseTitle }) => {
   const [editChapterTitle, setEditChapterTitle] = useState(null);
   const [deleteCHapterTitle, setDeleteChapterTitle] = useState(null);
 
+  
   const deleteAllTopics = async () => {
     try {
       // Iterate over all chapters
@@ -133,14 +143,6 @@ const CourseOverviewById = ({ courseTitle }) => {
       console.error("Error deleting topics:", error);
     }
   };
-
-  const handleDeleteChapter = async (chapterId) => {
-    const deleteChapter = await axios.delete(
-      `http://localhost:8080/api/v1/auth/chapter/${chapterId}`
-    );
-    setLoadByChapter(deleteChapter.data);
-  };
-
   return (
     <>
       <div className="w-full h-full">
@@ -148,7 +150,7 @@ const CourseOverviewById = ({ courseTitle }) => {
           <div className="">
             <div className="w-full  lg:w-[800px] ">
               <div className="text-black w-[100%] lg:font-bold text-[.8rem]  lg:text-[2rem]  lg:flex lg:items-center flex flex-row justify-between">
-                <p className="hidden lg:flex lg:font-bold TeamB_text-shadow lg:text-[2.5rem] text-[1.3rem] w-[60%] overflow-x-auto TeamB_no-scrollbar mb-2 cursor-pointer">
+                <p className="hidden lg:flex lg:font-bold TeamB_text-shadow lg:text-[2.5rem] text-[1.3rem] w-[50%] overflow-x-auto TeamB_no-scrollbar mb-2 cursor-pointer">
                   {courseTitle}
                 </p>
 
@@ -354,14 +356,13 @@ const CourseOverviewById = ({ courseTitle }) => {
                   return (
                     <div key={idx}>
                       {chapter.map((chap, idx) => {
-                        const { chapter_id, chapter_title } = chap;
+                        const { chapter_id } = chap;
                         return (
                           <div key={idx}>
                             {deleteModalVisible &&
                               deleteCHapterTitle === chapter_id && (
                                 <DeleteChapterModal
                                   chapterId={chapter_id}
-                                  chapterTitle={chapter_title}
                                   deleteChap={handleDeleteChapter}
                                   showDeleteModal={setDeleteModalVisible}
                                 />
@@ -376,33 +377,18 @@ const CourseOverviewById = ({ courseTitle }) => {
             </div>
           )}
 
-          <div className="w-full lg:w-[12rem] m-auto lg:flex lg:justify-center lg:items-center  p-2">
+          <div className="w-full lg:w-[12rem] m-auto lg:flex lg:justify-center lg:items-center pt-3">
             {/*add new chapter title */}
-            <div className="lg:rounded-[.5rem] lg:h-[35px] 2xl:h-[10px] flex items-center justify-center cursor-pointer  mx-2 my-2 bg-[#BCE8B1]">
+            <div className="lg:rounded-[1rem] lg:h-[50px] 2xl:h-[65px] flex items-center justify-center cursor-pointer bg-[#BCE8B1]">
               <button
-                className="flex items-center justify-center lg:w-[155px]  2xl:w-[481px ]"
+                className="flex items-center justify-center lg:w-[300px] gap-x-3 2xl:w-[481px]"
                 onClick={() => setShowChapModal((prev) => !prev)}>
                 <span className="pr-1">
-                  <IoAdd className="text-[2rem] lg:text-[1.5rem] text-white" />
+                  <IoAdd className="text-[2rem] lg:text-[2.5rem] text-white" />
                 </span>
                 <span className="text-shadow lg:text-[1rem] lg:font-bold 2xl:text-[24px]  text-[#070101] text-opacity-[55%] pr-1">
-                  Chapter Title
+                  Add Chapter Title
                 </span>
-              </button>
-            </div>
-
-            <div className="lg:rounded-[.5rem] lg:h-[35px] 2xl:h-[10px] flex items-center justify-center cursor-pointer mx-2 my-2 bg-[#BCE8B1]">
-              <button
-                className="flex items-center justify-center lg:w-[155px]  2xl:w-[481px]"
-                onClick={() => setShowChapModal((prev) => !prev)}>
-                <span className="pr-1">
-                  <IoAdd className="text-[2rem] lg:text-[1.5rem] text-white" />
-                </span>
-                <Link to="/addquiz">
-                  <span className="text-shadow lg:text-[1rem] lg:font-bold 2xl:text-[24px]  text-[#070101] text-opacity-[55%] pr-1">
-                    Assessment
-                  </span>
-                </Link>
               </button>
             </div>
 
