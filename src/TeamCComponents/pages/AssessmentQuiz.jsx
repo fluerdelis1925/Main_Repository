@@ -4,6 +4,7 @@ import "../css/addquiz.css";
 import { IoIosAdd } from "react-icons/io";
 import { FaTrashAlt } from "react-icons/fa";
 import { IoIosSave } from "react-icons/io";
+import { IoArrowBackCircleSharp } from "react-icons/io5";
 
 const AssessmentQuiz = () => {
   const navigate = useNavigate();

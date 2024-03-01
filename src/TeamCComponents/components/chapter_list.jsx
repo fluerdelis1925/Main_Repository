@@ -4,36 +4,33 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { IoArrowBackCircleSharp } from "react-icons/io5";
 import axios from "axios";
-import Team_D_HeaderV2 from "../../TeamDComponents/Team_D_HeaderV2";
-import { IoArrowBackCircleSharp } from "react-icons/io5";
 
 function ChapterList() {
     const navigate = useNavigate();
     const [chapters, setChapters] = useState([]);
 
-    const { id } = useParams()
+    const {id} = useParams()
     useEffect(() => {
         const fetchChapters = async () => {
             try {
-                const result = await axios.get(`http://localhost:8080/api/v1/auth/course/${id}`);
-
-                // Ensure that result.data is always an array by converting it
-                const coursesArray = Array.isArray(result.data)
-                    ? result.data
-                    : [result.data];
+              const result = await axios.get(`http://localhost:8080/api/courses/${id}`);
+        
+              // Ensure that result.data is always an array by converting it
+              const coursesArray = Array.isArray(result.data)
+                ? result.data
+                : [result.data];
                 setChapters(coursesArray);
             } catch (error) {
-                console.error("Error loading chapters:", error);
+              console.error("Error loading chapters:", error);
             }
-        };
-
-        fetchChapters();
+          };
+  
+      fetchChapters();
     }, [id]);
-    console.log(chapters)
+console.log(chapters)  
 
     return (
         <>
-            <Team_D_HeaderV2 />
             {/* Back button */}
             <Link onClick={() => navigate(-1)} className="buttonReturn d-flex align-items-center c_chapter_returncontainer" style={{ textDecoration: 'none', color: 'black', width: 'fit-content', }}>
                 <div className="d-flex align-items-center" style={{ marginTop: '1rem' }}>
@@ -45,46 +42,44 @@ function ChapterList() {
                     </div>
                     <span className="returnTitle c_chapter_returnText" style={{ marginLeft: '0.5rem', color: '#126912', fontSize: '1.5rem', marginTop: '0rem', }}>Back</span>
                 </div>
-                {/* Return button contents */}
             </Link>
             <div className="container mt-4 mx-auto">
-
-                {chapters.map((chap, idx) => {
-                    const { chapter, course_title } = chap
-                    console.log(chapter)
-                    return (
-                        <div key={idx}>
-                            <h2 className="text-left mb-4" style={{ fontWeight: 'bold', fontSize: '2rem' }}>{course_title}</h2><hr />
-                            {chapter && chapter.map((chap, idc) => {
-                                const { chapter_title, chapter_id } = chap
-                                return (
-                                    <div className="d-flex align-items-center" key={idc}>
-                                        <div className="c_chapter_cardmain card flex-grow-1" style={{
-                                            willChange: 'filter',
-                                            transition: 'filter 300ms', marginTop: '10px', backgroundColor: '#126912', borderRadius: '1rem',
-                                        }}>
-                                            <Link to={`/api/v1/auth/topics/${chapter_id}`} className="h4 text-white text-decoration-none c_chapter_cardtext">
-                                                <div className="card-body d-flex c_chapter_cardbody" style={{
-                                                    backgroundColor: '#126912', borderRadius: '1rem',
-                                                }}>
-                                                    {chapter_title}
-                                                </div>
-                                            </Link>
-                                        </div>
-                                        <div className="small-box-container c_chapter_scoremain" style={{ marginTop: '0.6rem', marginLeft: '0.99rem', }}>
-                                            <div className="small-box c_chapter_scoresub d-flex align-items-center justify-content-center text-white" style={{
-                                                backgroundColor: '#126912', width: '4rem',
-                                                height: '4rem', borderRadius: '10px',
-                                            }}>
-                                                <span>-$-</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                )
-                            })}
+                
+               {chapters.map((chap, idx) => {
+                const {chapter, course_title} = chap
+                console.log(chapter)
+                return (
+                   <div key={idx}>
+                    <h2 className="text-left mb-4" style={{ fontWeight: 'bold', fontSize: '2rem' }}>{course_title}</h2><hr />
+                    {chapter.map((chap, idc) => {const {chapter_title} = chap
+                    return(
+                        <div className="d-flex align-items-center" key={idc}>
+                        <div className="c_chapter_cardmain card flex-grow-1" style={{
+                            willChange: 'filter',
+                            transition: 'filter 300ms', marginTop: '10px', backgroundColor: '#126912', borderRadius: '1rem',
+                        }}>
+                            <Link to={`/api/v1/auth/topics/:id`} className="h4 text-white text-decoration-none c_chapter_cardtext">
+                                <div className="card-body d-flex c_chapter_cardbody" style={{
+                                    backgroundColor: '#126912', borderRadius: '1rem',
+                                }}>
+                                    {chapter_title}
+                                </div>
+                            </Link>
                         </div>
+                        <div className="small-box-container c_chapter_scoremain" style={{ marginTop: '0.6rem', marginLeft: '0.99rem', }}>
+                            <div className="small-box c_chapter_scoresub d-flex align-items-center justify-content-center text-white" style={{
+                                backgroundColor: '#126912', width: '4rem',
+                                height: '4rem', borderRadius: '10px',
+                            }}>
+                                <span>-$-</span>
+                            </div>
+                        </div>
+                    </div>
                     )
-                })}
+               })}
+                   </div>
+                )
+               })}
             </div>
         </>
     );

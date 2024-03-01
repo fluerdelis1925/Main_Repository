@@ -70,7 +70,7 @@
   }
   
   #c_course_seemoretext {
-    position: relative; 
+    position: relative; /* Sets the position of the course see more text */
     color: #0e3b03; /* Sets the color of the course see more text */
     cursor: pointer; /* Changes the cursor to pointer on hover */
   }
@@ -146,11 +146,18 @@
   }
   
   .teamclinepartition {
-    /* position: absolute; */
+    position: absolute;
     width: 80%;
     top: 28%;
     right: 10%;
-    margin: 20px;
+  }
+  
+  .teamctitlecard {
+    margin-bottom: 50px;
+  }
+  
+  .teamcparag {
+    margin-top: 30px;
   }
   
   /* LARGE DESKTOP */

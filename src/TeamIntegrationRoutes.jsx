@@ -64,20 +64,24 @@ import TeamB_EditTopic from "./TeamBComponents/components/Topic/TopicPages/EditT
 import TeamC_Dashboard from "./TeamCComponents/pages/dashboard";
 import TeamC_Assessments from "./TeamCComponents/pages/assessment";
 import TeamC_Course from "./TeamCComponents/pages/course";
+import TeamC_QuizForm from "./TeamCComponents/pages/quizForm";
 import TeamA_NewPass from "./TeamAComponents/components/NewPass";
+import TeamC_QuizHtml1 from "./TeamCComponents/pages/quiz/quiz_html1";
+import TeamC_QuizSql1 from "./TeamCComponents/pages/quiz/quiz_sql1";
+import TeamC_QuizSvn1 from "./TeamCComponents/pages/quiz/quiz_svn1";
+import TeamC_QuizSql2 from "./TeamCComponents/pages/quiz/quiz_sql2";
+import TeamC_QuizSvn2 from "./TeamCComponents/pages/quiz/quiz_svn2";
+import TeamC_QuizHtml2 from "./TeamCComponents/pages/quiz/quiz_html2";
+import TeamC_QuizSql3 from "./TeamCComponents/pages/quiz/quiz_sql3";
+import TeamC_QuizSvn3 from "./TeamCComponents/pages/quiz/quiz_svn3";
+import TeamC_QuizHtml3 from "./TeamCComponents/pages/quiz/quiz_html3";
 import ForumF from "./TeamCComponents/pages/ForumF";
 import ForumFInstructor from "./TeamCComponents/pages/ForumFInstructor";
 import ForumD from "./TeamCComponents/pages/ForumD";
-
-import AssessmentSql from "./TeamCComponents/pages/quiz/assessment_sql";
-import AssessmentSvn from "./TeamCComponents/pages/quiz/assessment_svn";
-import AssessmentHtml from "./TeamCComponents/pages/quiz/assessment_html";
-import ChapterList from "./TeamCComponents/components/chapter_list";
-import TeamC_MainContent from "./TeamCComponents/components/course_maincontent";
-
+import ChapterList from "./TeamCComponents/components/chapter_list";    
 import AddQuiz from "./TeamCComponents/pages/AddQuiz";
-import TeamC_Topics from "./TeamCComponents/pages/Topics";
-import TeamC_QuizForm from "./TeamCComponents/pages/quizForm";
+import AssessmentQuiz from "./TeamCComponents/pages/AssessmentQuiz";
+import Test from "./TeamCComponents/pages/test";
 
 // team D
 import Team_D_View from "./TeamDComponents/Team_D_View";
@@ -131,41 +135,20 @@ function TeamIntegrationRoutes() {
 
           <Route path="teambtopicedit/:id" element={<TeamB_EditTopic />} />
 
-          {/* TEAM C */}
-          <Route path="/teamcdashboard" element={<TeamC_Dashboard />} />
-          <Route path="/assessment" element={<TeamC_Assessments />} />
-          <Route path="/course" element={<TeamC_Course />} />
-          <Route path="/ForumF" element={<ForumF />} />
-          <Route path="/AddQuiz" element={<AddQuiz />} />
-          <Route path="/AssessmentQuiz" element={<AssessmentQuiz />} />
-          <Route path="/ForumFInstructor" element={<ForumFInstructor />} />
-          <Route path="/quizform" element={<TeamC_QuizForm />} />
-          <Route path="/forum_discussion" element={<ForumD />} />
-          <Route
-            path="/forum_discussion_instructor"
-            element={<ForumDInstructor />}
-          />
-          <Route path="/assessment_sql" element={<AssessmentSql />} />
-          <Route path="/assessment_svn" element={<AssessmentSvn />} />
-          <Route path="/assessment_html" element={<AssessmentHtml />} />
-          <Route path="/api/v1/auth/chapters/:id" element={<ChapterList />} />
-          <Route
-            path="/api/v1/auth/topics/:id"
-            element={<TeamC_MainContent />}
-          />
-          <Route path="/topic" element={<Test />} />
-
-          {/* QUIZ LIST */}
-          <Route path="/quiz_sql1" element={<TeamC_QuizSql1 />} />
-          <Route path="/quiz_svn1" element={<TeamC_QuizSvn1 />} />
-          <Route path="/quiz_html1" element={<TeamC_QuizHtml1 />} />
-          <Route path="/quiz_sql2" element={<TeamC_QuizSql2 />} />
-          <Route path="/quiz_svn2" element={<TeamC_QuizSvn2 />} />
-          <Route path="/quiz_html2" element={<TeamC_QuizHtml2 />} />
-          <Route path="/quiz_sql3" element={<TeamC_QuizSql3 />} />
-          <Route path="/quiz_svn3" element={<TeamC_QuizSvn3 />} />
-          <Route path="/quiz_html3" element={<TeamC_QuizHtml3 />} />
-
+        {/* TEAM C */}
+        <Route path="/teamcdashboard" element={<TeamC_Dashboard />} />
+        <Route path="/assessment" element={<TeamC_Assessments />} />
+        <Route path="/course" element={<TeamC_Course />} />
+        <Route path="/ForumF" element={<ForumF />} />
+        <Route path="/AddQuiz" element={<AddQuiz/>}/>
+        <Route path="/AssessmentQuiz" element={<AssessmentQuiz/>}/>
+        <Route path="/ForumFInstructor" element={<ForumFInstructor />} />
+        <Route path="/quizform" element={<TeamC_QuizForm/>} />
+        <Route path="/forum_discussion" element={<ForumD/>} />
+        <Route path="/forum_discussion_instructor" element={<ForumDInstructor/>} />
+        <Route path="/api/v1/auth/chapters/:id" element={<ChapterList/>} />
+        <Route path="/api/v1/auth/topics/:id" element={<TeamC_Topics/>} />
+        <Route path="/api/v1/auth/quiz/:id" element={<TeamC_QuizForm/>} />
 
           {/* Team D */}
 

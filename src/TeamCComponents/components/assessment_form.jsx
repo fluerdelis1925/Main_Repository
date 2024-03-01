@@ -202,7 +202,7 @@ function TeamC_AssessmentForm_Component() {
                   </div>
                 </div>
                 {/* END OF QUIZ QUESTION */}
-                <div className="" style={{ margin: '10px', }}>
+                <div className="" style={{ margin: '10px',}}>
                   <br />
                 </div>
               </div>

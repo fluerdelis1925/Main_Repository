@@ -12,7 +12,7 @@ function CoursePreview() {
   useEffect(() => {
     const fetchChapters = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/api/v1/auth/getCourses");
+        const response = await axios.get("http://localhost:8080/api/courses");
         console.log("Response Data:", response.data); // Log response data
         setChapters(response.data);
       } catch (error) {
@@ -61,21 +61,18 @@ function CoursePreview() {
                         {chapterData.course_title}
                       </h5>
                       <hr className="teamclinepartition" />
-                      <div className="teamcparag card-body bg-transparent border-success d-flex flex-column text-justify">
-                        <span>
-                          {chapterData.course_description.split(' ').slice(0, 20).join(' ')}
-                        </span>
-                        <span
-                          className="fw-bold text-end"
-                          id="c_course_seemoretext"
-                          data-bs-toggle="modal"
-                          data-bs-target={`#modal_seemore${index + 1}`}
-                          onClick={incrementCounterAndAttributes}
-                        >
-                          See more..
-                        </span>
-                      </div>
-
+                      <p className="teamcparag card-body bg-transparent border-success d-flex flex-column text-justify">
+                        {chapterData.course_description}
+                      </p>
+                      <p
+                        className="fw-bold text-end"
+                        id="c_course_seemoretext"
+                        data-bs-toggle="modal"
+                        data-bs-target={`#modal_seemore${index + 1}`}
+                        onClick={incrementCounterAndAttributes}
+                      >
+                        See more..
+                      </p>
                       <div>
                         <br />
                       </div>
@@ -85,12 +82,6 @@ function CoursePreview() {
                         data-bs-target={`#${modalId}`}
                         id={buttonId}
                         onClick={incrementCounterAndAttributes}
-                        style={{
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          height: '30px'
-                        }}
                       >
                         Enroll Now
                       </button>

@@ -1,40 +1,74 @@
-import { Link, useParams, useNavigate } from "react-router-dom";
-import { useRef, useState, useEffect } from "react";
+import { useLocation, Link } from "react-router-dom";
+import { useRef, useState } from "react";
 import { data } from "../data/quiz_content_data";
-import axios from "axios";
 
 import '../css/quizform_style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function TeamC_QuizForm_Component() {
-  const navigate = useNavigate();
+  const { pathname } = useLocation();
+  let quizTitle = '';
+  let descText = '';
+  let urlReturn = '';
 
-  const goBack = () => {
-    navigate(-1);
-  };
+  switch (pathname) {
+    /* QUIZ CHAPTER 1   */
+    case '/quiz_sql1':
+      quizTitle = 'Chapter 1: SQL Quiz';
+      descText = 'Please keep your notes before taking the quiz. No cheating! Go anzen ni.';
+      urlReturn = '/course1_sql';
+      break;
+    case '/quiz_svn1':
+      quizTitle = 'Chapter 1: Subversion Quiz';
+      descText = 'Please keep your notes before taking the quiz. No cheating! Go anzen ni.';
+      urlReturn = '/course1_svn';
+      break;
+    case '/quiz_html1':
+      quizTitle = 'Chapter 1: HTML Programming Quiz';
+      descText = 'Please keep your notes before taking the quiz. No cheating! Go anzen ni.';
+      urlReturn = '/course1_hprog';
+      break;
 
-  const [quiz, setQuiz] = useState([]);
+    /* QUIZ CHAPTER 2   */
+    case '/quiz_sql2':
+      quizTitle = 'Chapter 2: SQL Quiz';
+      descText = 'Please keep your notes before taking the quiz. No cheating! Go anzen ni.';
+      urlReturn = '/course2_sql';
+      break;
+    case '/quiz_svn2':
+      quizTitle = 'Chapter 2: Subversion Quiz';
+      descText = 'Please keep your notes before taking the quiz. No cheating! Go anzen ni.';
+      urlReturn = '/course2_svn';
+      break;
+    case '/quiz_html2':
+      quizTitle = 'Chapter 2: HTML Programming Quiz';
+      descText = 'Please keep your notes before taking the quiz. No cheating! Go anzen ni.';
+      urlReturn = '/course2_hprog';
+      break;
 
-  const { id } = useParams()
-  useEffect(() => {
-      const fetchQuiz = async () => {
-          try {
-              const result = await axios.get(`http://localhost:8080/api/v1/auth/quiz/${id}`);
+    /* QUIZ CHAPTER 3   */
+    case '/quiz_sql3':
+      quizTitle = 'Chapter 3: SQL Quiz';
+      descText = 'Please keep your notes before taking the quiz. No cheating! Go anzen ni.';
+      urlReturn = '/course';
+      break;
+    case '/quiz_svn3':
+      quizTitle = 'Chapter 3: Subversion Quiz';
+      descText = 'Please keep your notes before taking the quiz. No cheating! Go anzen ni.';
+      urlReturn = '/course';
+      break;
+    case '/quiz_html3':
+      quizTitle = 'Chapter 3: HTML Programming Quiz';
+      descText = 'Please keep your notes before taking the quiz. No cheating! Go anzen ni.';
+      urlReturn = '/course3_hprog';
+      break;
 
-              // Ensure that result.data is always an array by converting it
-              const coursesArray = Array.isArray(result.data)
-                  ? result.data
-                  : [result.data];
-              setQuiz(coursesArray);
-          } catch (error) {
-              console.error("Error loading quiz:", error);
-          }
-      };
-
-      fetchQuiz();
-  }, [id]);
-  console.log(quiz)
-
+    default:
+      quizTitle = 'Quiz Title Goes Here';
+      descText = 'Please keep your notes before taking the quiz. No cheating! Go anzen ni.';
+      urlReturn = '/course';
+      break;
+  }
   {/* FOR QUIZ QUESTIONS */ }
   let [index, setIndex] = useState(0);
   let [question, setQuestion] = useState(data[index]);
@@ -116,7 +150,7 @@ function TeamC_QuizForm_Component() {
 
   return (
     <>
-      <Link to={goBack} className="buttonReturn d-flex align-items-center c_chapter_returncontainer" style={{ textDecoration: 'none', color: 'black', width: 'fit-content', }}>
+      <Link to={urlReturn} className="buttonReturn d-flex align-items-center c_chapter_returncontainer" style={{ textDecoration: 'none', color: 'black', width: 'fit-content', }}>
         <div className="d-flex align-items-center" style={{ marginTop: '1rem' }}>
           <div>
             <img src="../../src/assets/TeamCassets/green_button.png" className="btnReturn c_chapter_return" alt="return-icon" style={{
@@ -129,19 +163,13 @@ function TeamC_QuizForm_Component() {
       </Link>
 
       {/* Main layout */}
-      {quiz.map((chap, idx) => {
-                    const { quiz_description, quiz_title} = chap
-                    console.log(quiz)
-                    return (<>
-      <main className="c_chapcourse_mainlayout" key={idx} style={{ marginTop: '1.5rem', marginLeft: '10rem', marginRight: '10rem' }}>
+      <main className="c_chapcourse_mainlayout" style={{ marginTop: '1.5rem', marginLeft: '10rem', marginRight: '10rem' }}>
 
         {/* Start of Topic Container */}
-        
-
         <div>
 
-          <div className="container" key ={idx}>
-            <p style={{ fontSize: '2.5rem' }}>{quiz_title}</p>
+          <div className="container">
+            <p style={{ fontSize: '2.5rem' }}>{quizTitle}</p>
             <br />
             <div className="row gy-5" style={{ backgroundColor: "#EBFFE5" }}>
               <div className="col-12">
@@ -157,7 +185,7 @@ function TeamC_QuizForm_Component() {
                     borderColor: "#0e3b03"
                   }}
                 >
-                  <p className="lh-base" style={{ fontSize: '1.3rem', marginTop: '1rem', marginLeft: '1rem', marginRight: '1rem', marginBottom: '1rem', }}>{quiz_description}</p>
+                  <p className="lh-base" style={{ fontSize: '1.3rem', marginTop: '1rem', marginLeft: '1rem', marginRight: '1rem', marginBottom: '1rem', }}>{descText}</p>
 
                   {/* QUIZ QUESTIONS GOES HERE */}
                   <div id="quizContainer" style={{ marginTop: '2.5rem', marginBottom: '2.5rem', marginLeft: '2.5rem', marginRight: '2.5rem', }}>
@@ -203,11 +231,13 @@ function TeamC_QuizForm_Component() {
                         </>
                       ) : (<></>)}
 
+
+
                     </div>
                   </div>
                 </div>
                 {/* END OF QUIZ QUESTION */}
-                <div className="" style={{ margin: '10px', }}>
+                <div className="" style={{ margin: '10px',}}>
                   <br />
                 </div>
               </div>
@@ -215,52 +245,51 @@ function TeamC_QuizForm_Component() {
           </div>
         </div>
       </main>
-      </>)})}
       {/* End of Topic Container */}
       {/* End of Main Layout */}
 
       {/* Modal for taking the quiz */}
       <div className="modal fade modalMain" id="mainId" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div className="modal-dialog modal-dialog-centered">
-          <div className="modal-content" style={{ backgroundColor: '#D9FFCF' }}>
-            <div className="modal-header">
-              <h5 className="modal-title" id="exampleModalLabel">Take the quiz?</h5>
-              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div className="modal-body text-center">
-              <p>You will be redirected to Google Form's website. Please keep your notes and answer the Quiz honestly.</p>
-              <p>Good luck trainee!</p>
-            </div>
-            <div className="modal-footer">
-              {/* Button to proceed to the quiz */}
-              <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSf6_s-EAisyl3bXEn1QB1IrIRnYppAQjGkk_rsO4Gvfn7PGqw/viewform', '_blank')} style={{ backgroundColor: '#0e3b03', color: '#ffffff', borderRadius: '20px', fontSize: '15px', width: '100px' }}>Yes</button>
-              {/* Button to cancel */}
-              <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" style={{ backgroundColor: '#0e3b03', color: '#ffffff', borderRadius: '20px', fontSize: '15px', width: '100px' }}>Cancel</button>
-            </div>
+          <div className="modal-dialog">
+              <div className="modal-content" style={{ backgroundColor: '#D9FFCF' }}>
+                  <div className="modal-header">
+                      <h5 className="modal-title" id="exampleModalLabel">Take the quiz?</h5>
+                      <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div className="modal-body text-center">
+                      <p>You will be redirected to Google Form's website. Please keep your notes and answer the Quiz honestly.</p>
+                      <p>Good luck trainee!</p>
+                  </div>
+                  <div className="modal-footer">
+                      {/* Button to proceed to the quiz */}
+                      <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSf6_s-EAisyl3bXEn1QB1IrIRnYppAQjGkk_rsO4Gvfn7PGqw/viewform', '_blank')} style={{ backgroundColor: '#0e3b03', color: '#ffffff', borderRadius: '20px', fontSize: '15px', width: '100px' }}>Yes</button>
+                      {/* Button to cancel */}
+                      <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" style={{ backgroundColor: '#0e3b03', color: '#ffffff', borderRadius: '20px', fontSize: '15px', width: '100px' }}>Cancel</button>
+                  </div>
+              </div>
           </div>
-        </div>
       </div>
 
       {/* Modal for downloading resource file */}
       <div className="modal fade modalSub" id="subId" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div className="modal-dialog modal-dialog-centered">
-          <div className="modal-content" style={{ backgroundColor: '#D9FFCF' }}>
-            <div className="modal-header">
-              <h5 className="modal-title" id="exampleModalLabel">Take the quiz?</h5>
-              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div className="modal-body text-center">
-              <p>You will be downloading a resource file.</p>
-              <p>Do you wish to Proceed?</p>
-            </div>
-            <div className="modal-footer">
-              {/* Button to proceed with downloading */}
-              <button type="button" className="btn btn-primary" data-bs-dismiss="modal" style={{ backgroundColor: '#0e3b03', color: '#ffffff', borderRadius: '20px', fontSize: '15px', width: '100px' }}>Proceed</button>
-              {/* Button to cancel */}
-              <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" style={{ backgroundColor: '#0e3b03', color: '#ffffff', borderRadius: '20px', fontSize: '15px', width: '100px' }}>Cancel</button>
-            </div>
+          <div className="modal-dialog">
+              <div className="modal-content" style={{ backgroundColor: '#D9FFCF' }}>
+                  <div className="modal-header">
+                      <h5 className="modal-title" id="exampleModalLabel">Take the quiz?</h5>
+                      <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div className="modal-body text-center">
+                      <p>You will be downloading a resource file.</p>
+                      <p>Do you wish to Proceed?</p>
+                  </div>
+                  <div className="modal-footer">
+                      {/* Button to proceed with downloading */}
+                      <button type="button" className="btn btn-primary" data-bs-dismiss="modal" style={{ backgroundColor: '#0e3b03', color: '#ffffff', borderRadius: '20px', fontSize: '15px', width: '100px' }}>Proceed</button>
+                      {/* Button to cancel */}
+                      <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" style={{ backgroundColor: '#0e3b03', color: '#ffffff', borderRadius: '20px', fontSize: '15px', width: '100px' }}>Cancel</button>
+                  </div>
+              </div>
           </div>
-        </div>
       </div>
 
     </>

@@ -25,7 +25,7 @@ function ModalSeeMore() {
         <>
             {chapters.map((chapterData, index) => (
                 <div key={index} className="modal fade" id={`modal_seemore${index + 1}`} tabIndex="-1" role="dialog" aria-labelledby={`exampleModalLongTitle${index + 1}`} aria-hidden="true">
-                    <div className="modal-dialog modal-dialog-centered" role="document">
+                    <div className="modal-dialog" role="document">
                         <div className="modal-content" style={{ backgroundColor: "#D9FFCF" }}>
                             <div className="modal-header">
                                 <h5 className="modal-title fw-bold" id={`exampleModalLongTitle${index + 1}`}>{chapterData.course_title}</h5>
@@ -33,7 +33,7 @@ function ModalSeeMore() {
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div className="modal-body" style={{ wordWrap: 'break-word' }}>
+                            <div className="modal-body">
                                 <p>{chapterData.course_description}</p>
                             </div>
                             <div className="modal-footer">
