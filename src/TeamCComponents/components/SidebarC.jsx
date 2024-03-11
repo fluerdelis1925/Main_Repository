@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "../css/sidebar.css";
 import "../css/base_style.css";
 import { IoArrowBackCircleSharp } from "react-icons/io5";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 
 const SidebarC = () => {
@@ -20,17 +21,15 @@ const SidebarC = () => {
   };
 
   return (
-    <div className="sidebar-wrapper">
-      <div className="logo-container">
-        {/* Your logo component goes here */}
-      </div>
+    <div className=" sidebar-wrapper" >
       <div className={`hamburger-menu ${isOpen ? "open" : ""}`} onClick={toggleSidebar}>
         <div className={`bar ${isOpen ? "open" : ""}`}></div>
         <div className={`bar ${isOpen ? "open" : ""}`}></div>
         <div className={`bar ${isOpen ? "open" : ""}`}></div>
       </div>
       <nav className={`sidebar ${isOpen ? "open" : ""}`}>
-        <div className="sidebar-sticky">
+        
+        <div className="">
           <ul className="nav flex-column">
             <li className="teamcnavitem nav-item">
               <Link className="teamctopic nav-link" to="/topic1">
@@ -42,6 +41,16 @@ const SidebarC = () => {
                 Topic 2
               </Link>
             </li>
+            <button className="btn courseButton"
+                        data-bs-toggle="modal"
+                        data-bs-target="#mainId"
+                        type="button"
+                        style={{
+                          backgroundColor: '#0E3B03',
+                          color: 'white',
+                          boxShadow: '0 2px 5px 0 rgb(0 0 0 / 25%), 0 5px 5px 0 rgb(0 0 0 / 30%)',
+                        }}
+                      >Go to quiz</button>
             <Link onClick={goBack} className="buttonReturn d-flex align-items-center c_chapter_returncontainer" style={{ textDecoration: 'none', color: 'black', width: 'fit-content', }}>
               <div className="teamcreturnbtn d-flex align-items-center" style={{ marginTop: '1rem' }}>
                 <div>

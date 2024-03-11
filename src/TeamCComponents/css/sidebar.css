@@ -1,9 +1,10 @@
 .sidebar-wrapper {
-    position: relative;
+    position: fixed;
+    z-index: 999;
   }
   
   .hamburger-menu {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     z-index: 1000;
@@ -15,6 +16,7 @@
   }
   
   .bar {
+   
     width: 25px;
     height: 3px;
     background-color: #165207;
@@ -50,6 +52,7 @@
   
   
   .sidebar.open {
+    
     transform: translateX(0);
   }
 
@@ -71,14 +74,14 @@
 
   @media (max-width: 768px) {
     .buttonReturn{
-      margin-top:700px;
+      /* margin-top:700px; */
     }
     
   }
 
   @media (max-width: 1024px){  
     .buttonReturn{
-      margin-top:700px;
+      /* margin-top:700px; */
     }
   }
 

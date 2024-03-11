@@ -5,7 +5,9 @@ import TeamC_MainContent from "../components/course_maincontent";
 function TeamC_Topic (){
     return (
         <>
-        <Team_D_HeaderV2/>
+        
+           <Team_D_HeaderV2/>
+     
         <TeamC_MainContent/>
         </>
     )
