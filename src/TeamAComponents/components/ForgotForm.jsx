@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Footer from "./Footer";
+
 function ForgotForm({openNewPassModal, closeForgotModal, openLoginModal}) {
   const [email, setEmail] = useState('');
   const [resetStatus, setResetStatus] = useState('');
@@ -12,7 +13,9 @@ function ForgotForm({openNewPassModal, closeForgotModal, openLoginModal}) {
   const [resendStatus, setResendStatus] = useState('');
   const [resending, setResending] = useState(false);
   const [loading, setLoading] = useState(false); 
+
   const navigate = useNavigate();
+
   const sendForgotCode = async () => {
     setLoading(true);
     try {
@@ -23,6 +26,7 @@ function ForgotForm({openNewPassModal, closeForgotModal, openLoginModal}) {
         },
         body: JSON.stringify({ email }),
       });
+
       if (response.ok) {
         console.log('Email is registered. Please check your email.');
         setEmailSubmitted(true);
@@ -39,9 +43,11 @@ function ForgotForm({openNewPassModal, closeForgotModal, openLoginModal}) {
       setLoading(false); // Reset loading state regardless of success or failure
   }
   };
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
   };
+
   const resendForgotCode = async () => {
     try {
       const response = await fetch(`http://localhost:8080/api/v1/auth/resendCode`, {
@@ -51,6 +57,7 @@ function ForgotForm({openNewPassModal, closeForgotModal, openLoginModal}) {
         },
         body: JSON.stringify({ email }),
       });
+
       if (response.ok) {
         console.log('Resent verification code. Please check your email.');
         setError(''); // Clear previous errors when successfully resending code
@@ -63,6 +70,7 @@ function ForgotForm({openNewPassModal, closeForgotModal, openLoginModal}) {
       setError('Error resending verification code. Please try again.');
     }
   };
+
   const verifyOtp = async (otp) => {
     try {
       const response = await fetch(`http://localhost:8080/api/v1/auth/verify-forgot-code?email=${email}&code=${otp}`, {
@@ -87,6 +95,7 @@ function ForgotForm({openNewPassModal, closeForgotModal, openLoginModal}) {
       setError('Error verifying OTP. Please try again.');
     }
   };
+
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
       handleFormSubmit(e);
@@ -97,14 +106,7 @@ function ForgotForm({openNewPassModal, closeForgotModal, openLoginModal}) {
     <div className="forgot-container">
       <div className="template-form-container">
         <form className="forgot-template-form" onSubmit={handleFormSubmit}>
-            <button className="wBackbutton" onClick={() => {
-          openLoginModal();
-          closeForgotModal(); 
-        }}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-left" viewBox="0 0 16 16">
-                <path fillRule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
-              </svg>
-            </button>
+
           <h2 className="title">Forgot Password</h2>
           {emailSubmitted ? (
             <>
@@ -142,10 +144,19 @@ function ForgotForm({openNewPassModal, closeForgotModal, openLoginModal}) {
                 )}
               </div>
               <div className='lower'>
-              <button className="TeamA-button" onClick={sendForgotCode} disabled={loading}>
-               {loading ? 'Loading...' : 'Continue'}
-              </button>
-             </div>
+                <Link className='Remember-pass'
+                  onClick={() => {
+                    openLoginModal();
+                    closeForgotModal();
+                  }}
+                >
+                  <p>Remember Password?</p>
+                </Link>
+                <button className="TeamA-button" onClick={sendForgotCode} disabled={loading}>
+                  {loading ? 'Loading...' : 'Continue'}
+                </button>
+              </div>
+              {resendStatus && <p className="error-message">{resendStatus}</p>}
             </>
           )}
         </form>
@@ -157,4 +168,5 @@ function ForgotForm({openNewPassModal, closeForgotModal, openLoginModal}) {
     </div>
   );
 }
+
 export default ForgotForm;

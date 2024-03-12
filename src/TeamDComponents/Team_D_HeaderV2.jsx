@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import "./TeamD_Css/navbar.css";
 import TsukidenLogo from "./TeamD_Assets/TsukidenLogo.png";
 import Profile from "./TeamD_Assets/profilepic.jpg";
@@ -11,21 +11,36 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import ForumF from "./../TeamCComponents/pages/ForumF";
 import { useAuth } from "../TeamAComponents/components/AuthContext";
 
+function getUserImageType(profilePicture) {
+  // Check if profilePicture is defined and not null
+  if (profilePicture && profilePicture.startsWith) {
+    // Check the image type based on the data
+    const isPNG = profilePicture.startsWith('data:image/png;base64,');
+    const isJPEG = profilePicture.startsWith('data:image/jpeg;base64,');
+    
+    if (isPNG) {
+      return 'png';
+    } else if (isJPEG) {
+      return 'jpeg';
+    } else {
+      // Return a default type or handle accordingly
+      return 'unknown'; // You can change this to 'jpeg' or handle as needed
+    }
+  } else {
+    // Return a default type or handle accordingly
+    return 'unknown'; // You can change this to 'jpeg' or handle as needed
+  }
+}
+
 const Team_D_HeaderV2 = () => {
   const [clicked, setClicked] = useState(false);
-  const { isLoggedIn, handleLogout } = useAuth();
+  const [showLogoutConfirmationModal, setShowLogoutConfirmationModal] = useState(false);
+  const { handleLogout } = useAuth();
   const value = localStorage.getItem('username');
   const firstname = localStorage.getItem('firstName');
   const lastname = localStorage.getItem('lastName');
   const email = localStorage.getItem('email');
-
-  if (value !== null) {
-    // Value exists, you can use it
-    console.log("User is online!");
-  } else {
-    // Value does not exist
-    console.log('Value not found for the specified key.');
-  }
+  const navigate = useNavigate();
 
   const handleClick = () => {
     setClicked(!clicked);
@@ -33,11 +48,20 @@ const Team_D_HeaderV2 = () => {
 
   const closeMobileNavbar = () => {
     setClicked(false);
-    setMyCourseActive(false);
   };
 
-  const reloadPage = () => {
-    window.location.reload();
+  const handleConfirmLogout = () => {
+    handleLogout();
+    setShowLogoutConfirmationModal(false);
+    navigate("/"); // Use navigate function to redirect
+  };
+
+  const handleOpenLogoutConfirmationModal = () => {
+    setShowLogoutConfirmationModal(true);
+  };
+
+  const handleCloseLogoutConfirmationModal = () => {
+    setShowLogoutConfirmationModal(false);
   };
 
   // Add or remove the 'no-scroll' class based on the 'clicked' state
@@ -59,7 +83,6 @@ const Team_D_HeaderV2 = () => {
         <NavLink
           onClick={() => {
             closeMobileNavbar();
-            reloadPage();
           }}
         >
           <img src={TsukidenLogo} alt="Logo" />
@@ -142,18 +165,6 @@ const Team_D_HeaderV2 = () => {
                 Verification
               </NavLink>
             </li>
-            {/* Log Out Link */}
-            <li className="profile_link">
-              <NavLink
-                to="/"
-                activeClassName="active"
-                onClick={() => {
-                  handleLogout();
-                }}
-              >
-                <span className="teamD_LogOut_Btn">Log Out</span>
-              </NavLink>
-            </li>
           </ul>
         </div>
         {/* Mobile Menu */}
@@ -177,8 +188,7 @@ const Team_D_HeaderV2 = () => {
             </Dropdown.Toggle>
 
             <Dropdown.Menu>
-              {/* Profile Dropdown Items */}
-              <Dropdown.Item href="">
+              <Dropdown.Item href="#">
                 <FaRegUserCircle /> Profile
               </Dropdown.Item>
               <Dropdown.Item
@@ -188,19 +198,33 @@ const Team_D_HeaderV2 = () => {
               >
                 <TbCertificate /> My Certificate
               </Dropdown.Item>
-              <Dropdown.Item
-                as={NavLink}
-                to="/"
-                onClick={() => {
-                  handleLogout();
-                }}
-              >
+              <Dropdown.Item onClick={handleOpenLogoutConfirmationModal}>
                 <FiLogOut /> Log Out
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         </div>
       </nav>
+      {showLogoutConfirmationModal && (
+          
+              <div className="logoutmodal-overlay" onClick={handleCloseLogoutConfirmationModal}>
+                  <div className="label-container">
+              <div className="container-under">
+                <div className="auth-label">
+                  <h1>Logout Confirmation</h1>
+                </div>
+                <div className="logoutmodal">
+                  <h2>Are you sure you want to log out?</h2>
+                  <div>
+                    <button onClick={handleConfirmLogout}>Yes</button>
+                    <button onClick={handleCloseLogoutConfirmationModal}>Cancel</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
     </>
   );
 };

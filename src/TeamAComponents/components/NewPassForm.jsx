@@ -97,9 +97,6 @@ function NewPassForm({closeNewPassModal, openLoginModal}) {
             onFocus={() => setNewPasswordError('')}
             required
           />
-          <button type="button" className="toggle-button" onClick={handleTogglePassword}>
-            {showPassword ? 'Hide' : 'Show'}
-          </button>
         </div>
         <div className="email-input-field">
           <input
