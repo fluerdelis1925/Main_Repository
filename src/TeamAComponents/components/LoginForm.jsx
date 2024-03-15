@@ -40,20 +40,22 @@ function LoginForm({ openForgotModal, closeLoginModal }) {
 
         const storedRole = localStorage.getItem("Mapped role:");
         console.log("Login successful");
-        {
-          storedRole === "INSTRUCTOR"
-            ? navigate("/teambdashboard")
-            : navigate("/teamcdashboard");
-        }
+        storedRole === "INSTRUCTOR" ? navigate("/teambdashboard") : navigate("/teamcdashboard");
       } else {
-        setFailedAttempts((prevAttempts) => prevAttempts + 1);
-        if (failedAttempts === 2) {
-          setError("Warning: 2 more failed attempt will lock your account"); // make this red color
-        } else if (failedAttempts === 4) {
-          setError("Account locked due to multiple failed attempts"); // make this red color
-          // You may want to add logic here to lock the account in your AuthContext
+        if (result.error === "Account locked due to multiple failed attempts") {
+          onLoginError(result.error);
         } else {
-          setError("Invalid email or password. Please try again.");
+          setFailedAttempts((prevAttempts) => prevAttempts + 1);
+          if (failedAttempts >= 4) {
+            setError("Account locked due to multiple failed attempts");
+            // You may want to add logic here to lock the account in your AuthContext
+          } else if (failedAttempts === 2) {
+            setError("Warning: 2 more failed attempts will lock your account");
+          } else if (failedAttempts === 3) {
+            setError("Warning: 1 more failed attempt will lock your account");
+          } else {
+            setError("Invalid email or password. Please try again.");
+          }
         }
       }
     } catch (error) {
