@@ -8,13 +8,14 @@ import axios from "axios";
 
 function TeamC_ChapterSvn() {
   const [chapters, setChapters] = useState([]);
+  const userId = localStorage.getItem("userId");
   let count = 0;
 
   useEffect(() => {
     const fetchChapters = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8080/api/v1/auth/getCourses"
+          `http://localhost:8080/api/v1/auth/enrollment-by-user/${userId}`
         );
         setChapters(response.data);
       } catch (error) {
@@ -25,7 +26,7 @@ function TeamC_ChapterSvn() {
     fetchChapters();
   }, []);
 
-  console.log(chapters);
+  // console.log(chapters[0].course.course_title);
   return (
     <>
       {/*Navbar Component*/}
@@ -41,17 +42,19 @@ function TeamC_ChapterSvn() {
         <hr className="lnf" />
 
         {chapters.map((chapter, idx) => {
-          const { course_title, course_id } = chapter;
+          // const { course_title, course_id } = chapter;
+          // const { course_title } = chapter.course.course_title;
+          // const { course_id } = chapter.course.course_id;
 
           count++;
-          console.log(course_title);
+          console.log(chapter.course.course_id);
           return (
             <div key={idx} id="c_course_courses">
               {/* Chapter Card */}
               <div className="c_course_cardmain">
                 {/* Chapter Link */}
                 <Link
-                  to={`/api/v1/auth/chapters/${course_id}`}
+                  to={`/api/v1/auth/chapters/${chapter.course.course_id}`}
                   className="c_chapter_cardtext"
                 >
                   <div>
@@ -72,7 +75,7 @@ function TeamC_ChapterSvn() {
                     <span id="c_course_tagtext">CC_00{count}</span>
                   </div>
                   {/* Chapter Card Body */}
-                  <div id="c_course_cardbody">{course_title}</div>
+                  <div id="c_course_cardbody">{chapter.course.course_title}</div>
                 </Link>
               </div>
               <hr className="ln" />
