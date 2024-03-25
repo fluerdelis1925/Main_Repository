@@ -858,8 +858,25 @@ input::placeholder{
   position: relative;
 }
 
+/* Responsive adjustments */
+@media only screen and (max-width: 768px) {
+  .Prof1-wrapper {
+    flex-direction: column; /* Change to column layout for smaller screens */
+    margin: 10px; /* Adjust margin for smaller screens */
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .Prof1-wrapper {
+    margin: 5px; /* Adjust margin for even smaller screens */
+  }
+}
+
+/* Add more media queries for other screen sizes as needed */
+
+
 .Prof1-left {
-  width: 35%;
+  width: 100%;
   padding: 30px 25px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -903,11 +920,13 @@ input::placeholder{
 }
 
 .Prof1-right {
-  width: 65%;
+  width: 100%;
   padding: 30px 25px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
+
+
 
 .Prof1-info h3,
 .Prof1-projects h3 {
@@ -1007,8 +1026,27 @@ input::placeholder{
   border-radius: 10px;
 }
 
+/* Responsive adjustments */
+@media only screen and (max-width: 768px) {
+  .Prof2-wrapper {
+    flex-direction: column; /* Change to column layout for smaller screens */
+    margin: 10px; /* Adjust margin for smaller screens */
+    box-shadow: 0 6px 10px 0 rgba(14, 59, 3, 0.1); /* Adjust box shadow for smaller screens */
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .Prof2-wrapper {
+    margin: 5px; /* Adjust margin for even smaller screens */
+    box-shadow: 0 4px 6px 0 rgba(14, 59, 3, 0.1); /* Adjust box shadow for even smaller screens */
+  }
+}
+
+/* Add more media queries for other screen sizes as needed */
+
+
 .Prof2-left {
-  width: 35%;
+  width: 100%;
   padding: 30px 25px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -1048,7 +1086,7 @@ input::placeholder{
 }
 
 .Prof2-right {
-  width: 65%;
+  width: 100%;
   padding: 30px 25px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -1066,11 +1104,13 @@ input::placeholder{
 
 .Prof2-info_data {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   margin: 15px;
-  
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
+  
+
 .Prof2-data input {
   width: 100%;
   padding: 8px;
@@ -1136,7 +1176,6 @@ input::placeholder{
 .Prof2-buttons {
   display: flex;
   justify-content: flex-end; /* Align buttons to the right */
-  margin-top: 60px; /* Adjust the top margin as needed */
   margin-right: 10px; /* Adjust the right margin as needed */
   column-gap: 10px;
 }
@@ -1178,6 +1217,25 @@ input::placeholder{
   margin-right: 10px; /* Adjust the right margin as needed */
   margin-bottom: 10px;
 }
+
+/* Responsive adjustments */
+@media only screen and (max-width: 768px) {
+  .Prof1-buttons {
+    justify-content: left;
+    margin: 5px 0;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .Prof1-buttons {
+    /* Additional adjustments for even smaller screens */
+    /* Example: reduce margin */
+    margin: 3px 0;
+  }
+}
+
+/* Add more media queries for other screen sizes as needed */
+
 
 .Prof1-ChangeButton,
 .Prof1-Editbuttons {
@@ -1248,8 +1306,27 @@ input::placeholder{
   border-radius: 10px;
 }
 
+/* Responsive adjustments */
+@media only screen and (max-width: 768px) {
+  .Change-wrapper {
+    flex-direction: column; /* Change to column layout for smaller screens */
+    margin: 10px; /* Adjust margin for smaller screens */
+    box-shadow: 0 6px 10px 0 rgba(14, 59, 3, 0.1); /* Adjust box shadow for smaller screens */
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .Change-wrapper {
+    margin: 5px; /* Adjust margin for even smaller screens */
+    box-shadow: 0 4px 6px 0 rgba(14, 59, 3, 0.1); /* Adjust box shadow for even smaller screens */
+  }
+}
+
+/* Add more media queries for other screen sizes as needed */
+
+
 .Change-left {
-  width: 35%;
+  width: 100%;
   padding: 30px 25px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -1290,7 +1367,7 @@ input::placeholder{
 }
 
 .Change-right {
-  width: 65%;
+  width: 100%;
   padding: 25px 25px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -1308,9 +1385,10 @@ input::placeholder{
 
 .Change-info_data {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin:15px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 15px;
+    align-items: flex-end;
 }
 
 .Change-data {
